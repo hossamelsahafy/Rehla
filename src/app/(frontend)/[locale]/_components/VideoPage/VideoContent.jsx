@@ -97,7 +97,6 @@ const VideoContent = () => {
         />
         {!isPlaying && (
           <div className="absolute inset-0 flex flex-row items-center justify-center bg-black/40">
-            {/* Circle Play Button */}
             <button
               onClick={handlePlay}
               className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 border border-white text-white rounded-full 
@@ -107,7 +106,6 @@ const VideoContent = () => {
               <span className="text-xl lg:text-3xl">▶</span>
             </button>
 
-            {/* Text next to button */}
             <div className="flex flex-col font-jost items-start ml-4 text-white">
               <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
               <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
