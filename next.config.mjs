@@ -1,17 +1,15 @@
-import { withPayload } from '@payloadcms/next/withPayload'
-
 /** @type {import('next').NextConfig} */
+import createNextIntlPlugin from "next-intl/plugin";
+
 const nextConfig = {
-  // Your Next.js config here
-  webpack: (webpackConfig) => {
-    webpackConfig.resolve.extensionAlias = {
-      '.cjs': ['.cts', '.cjs'],
-      '.js': ['.ts', '.tsx', '.js', '.jsx'],
-      '.mjs': ['.mts', '.mjs'],
-    }
-
-    return webpackConfig
+  experimental: {
+    reactCompiler: false,
   },
-}
+  images: {
+    domains: ["localhost"],
+  },
+};
 
-export default withPayload(nextConfig, { devBundleServerPackages: false })
+const withNextIntl = createNextIntlPlugin();
+
+export default withNextIntl(nextConfig);

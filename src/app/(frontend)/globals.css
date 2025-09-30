@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+body{
+    background-color: #010101;
+}
+
+
+:root {
+  --color-hover: #7272FD;
+  --color-des: #1c2f8c;
+  --font-jost: 'Jost', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-bgSec: #FFE9E9;
+  --color-bgHover: #CCB0FA
+}
+@theme {
+    --color-hover: #7272FD;
+    --color-des: #1c2f8c;
+    --font-jost: 'Jost', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-inter: 'Inter', sans-serif;
+    --color-bgSec: #FFE9E9;
+    --color-bgHover: #CCB0FA
+  }
+
+  .images {
+  position: relative;
+  clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 5% 100%, 0 90%);
+  width: 300px;
+}
+
+.images::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  filter: blur(2px);
+}
+.images-rtl {
+  clip-path: polygon(10% 0, 100% 0, 100% 90%, 95% 100%, 0 100%, 0 20%);
+  width: 300px;
+}
+
+.images-rtl::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px; /* Glow on top-right for RTL */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  filter: blur(2px);
+}
+
+.imagebg {
+  clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 5% 100%, 0 90%);
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: white;
+  opacity: 0.4;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  transform: scale(1.3);
+  opacity: 1;
+  background: white;
+}
+.bgGradient{
+ background: linear-gradient(179.99deg, #000 9.21%, #6d3874 70.06%, #ba4c6a 102.27%);
+}
