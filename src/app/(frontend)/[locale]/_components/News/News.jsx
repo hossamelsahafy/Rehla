@@ -70,7 +70,6 @@ const News = () => {
   }
   return (
     <div className="w-full mx-auto newsBg px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/50 to-transparent pointer-events-none"></div>
       <div className="max-w-6xl mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
         {posts.slice(0, visibleCount).map((p, i) => (
           <div
@@ -104,6 +103,7 @@ const News = () => {
           {visibleCount === posts.length ? 'Show Less' : 'Show More'}
         </button>
       </div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white pointer-events-none"></div>
     </div>
   )
 }
