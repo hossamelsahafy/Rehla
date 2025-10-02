@@ -6,6 +6,7 @@ import VideoContent from './_components/VideoPage/VideoContent'
 import ServedPlaces from './_components/ServedPlaces/ServedPlaces'
 import Work from './_components/Work/Work'
 import News from './_components/News/News'
+import Services from './_components/Services/Services'
 export default function Home() {
   const t = useTranslations()
 
@@ -16,6 +17,7 @@ export default function Home() {
       <VideoContent />
       <ServedPlaces />
       <Work />
+      <Services />
       <News />
     </main>
   )

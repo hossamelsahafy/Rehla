@@ -86,13 +86,14 @@ const Work = () => {
   return (
     <>
       <div className="hidden lg:flex w-full flex-col items-center p-4 mt-20 overflow-hidden">
+        {' '}
         <div className="flex flex-row justify-between items-center w-full max-w-7xl mb-12">
           <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="italic font-playfair text-4xl leading-[1em] text-white flex-1"
+            className="italic font-playfair text-2xl sm:text-3xl md:text-4xl leading-[1em] text-white flex-1"
           >
             {t('Featured')}
           </motion.p>
@@ -104,7 +105,7 @@ const Work = () => {
             variants={svgVariant}
             src="/RightImage.png"
             alt="LogoImage"
-            className="object-contain w-30 cursor-pointer"
+            className="object-contain w-10 sm:w-16 md:w-20 cursor-pointer"
             whileHover={{
               scale: 1.25,
               rotate: -45,
@@ -112,17 +113,15 @@ const Work = () => {
             }}
           />
         </div>
-
-        <div className="relative w-full">
+        <div className="relative w-full min-h-[800px] h-auto">
           <img
             src="/SlidersBg/works-slider-bg.png"
             alt="Work Background"
             className="w-full h-full object-cover"
           />
-
-          <div className="absolute top-0 left-0 w-full h-full flex justify-center text-left items-start z-10">
+          <div className="absolute p-4 top-0 left-0 w-full h-full flex justify-center items-center z-10">
             <motion.div
-              className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto pt-20"
+              className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-2 sm:px-4" /* Changed pt to py for padding top and bottom */
               variants={containerVariant}
               initial="hidden"
               whileInView="visible"
@@ -132,17 +131,17 @@ const Work = () => {
                 <motion.div
                   key={w.Name}
                   variants={cardVariant}
-                  className="flex flex-col items-start text-left group overflow-visible"
+                  className="flex flex-col items-start text-left group overflow-visible w-full xs:w-[48%] sm:w-[45%] md:w-[40%] lg:w-[30%] xl:w-[22%] min-w-[160px] max-w-[320px]"
                 >
-                  <div className="relative rounded-lg shadow-lg overflow-visible">
+                  <div className="relative rounded-lg shadow-lg overflow-hidden w-full">
                     <img
                       src={w.Image}
                       alt={w.Name}
-                      className="clibPath object-cover w-full h-72 transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 transition-all duration-300" />
                   </div>
-                  <p className="w-[280px] mt-12 text-white text-2xl leading-[26.29px] font-medium font-jost uppercase">
+                  <p className="mt-3 sm:mt-4 md:mt-5 text-white text-base sm:text-lg md:text-xl lg:text-2xl leading-[1.3] font-medium font-jost uppercase">
                     {locale === 'ar' ? w.NameAr : w.Name}
                   </p>
                 </motion.div>
@@ -151,6 +150,7 @@ const Work = () => {
           </div>
         </div>
       </div>
+
       <WorkMobile featured={t('Featured')} work={work} locale={locale} />
     </>
   )
