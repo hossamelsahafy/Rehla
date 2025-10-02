@@ -11,5 +11,24 @@
     "paraOne": "An independent, award-winning advertising agency",
     "paraTwo": "Driven by innovation & culture",
     "paraThree": "Navigating the New Normal in Digital."
+  },
+  "ServedPlaces": {
+    "servingEverywhere": "Serving everywhere from:",
+    "cities": {
+      "cairo": "Cairo",
+      "dubai": "Dubai",
+      "riyadh": "Riyadh"
+    },
+    "FooterHeaderOne": "We bring cultural resonance to brands in the region",
+    "FooterHeaderTwo": "driving growth and delivering measurable",
+    "Span": "impact"
+  },
+  "Work": {
+    "Featured": "Featured Cases"
+  },
+  "Footer": {
+    "localTalents": "Local talents, regional presence.",
+    "teamsMena": "Our teams across MENA connect cultural insight with creative impact.",
+    "Follow": "Follow Us"
   }
 }

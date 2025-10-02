@@ -4,11 +4,12 @@ import { notFound } from 'next/navigation'
 import { Cairo, Jost, Playfair_Display, Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import NavBar from './_components/NavBar/NavBar'
-
+import Footer from './_components/Footer/PartOne'
 import '../globals.css'
 
 const jost = Jost({
   subsets: ['latin'],
+  style: ['italic', 'normal'],
   weight: ['400', '500', '700'],
   variable: '--font-jost',
 })
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavBar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

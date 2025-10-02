@@ -9,14 +9,12 @@ const DesktopNav = ({ locale, navLinks, switchPath, otherLocale, t }) => {
         locale === 'ar' ? 'flex-row-reverse' : 'flex-row'
       }`}
     >
-      {/* Logo */}
       <div className="flex items-center">
         <Link href={`/${locale}`}>
           <Image src="/Logo.png" width={118.41} height={33} alt="Logo" className="scale-75 my-1" />
         </Link>
       </div>
 
-      {/* Nav Links */}
       <div className="flex flex-1 justify-center">
         <div className="flex gap-6 font-jost rounded-lg">
           {navLinks.map((link, index) => (

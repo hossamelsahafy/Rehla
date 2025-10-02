@@ -81,3 +81,20 @@ body{
 .bgGradient{
  background: linear-gradient(179.99deg, #000 9.21%, #6d3874 70.06%, #ba4c6a 102.27%);
 }
+.swiper-linear .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+.bgRidial {
+  background-image:  radial-gradient(119.96% 121.22% at 50% -6.69%, rgb(0, 0, 0) 30%, rgb(101, 32, 15) 80%, rgb(178, 56, 27) 100%, rgb(0, 0, 0) 69.81%, rgba(0, 0, 0, 0) 84.81%, rgba(0, 0, 0, 0) 96.2%);
+}
+.clibPath {
+ clip-path:  polygon(0 0, 100% 0, 100% 66%, 75% 100%, 0 100%, 0 50%);
+}
+.mask {
+
+  clip-path: path("M293.801 1.39453L293.036 2.37305L232.469 79.7734H258.452L258.603 80.1592L293.123 169.185L293.442 170.009H64.5781L64.4268 169.626L29.3984 80.9834H1.75L2.52539 80.0029L64.5156 1.625L64.6973 1.39453H293.801Z");
+}
+.newsBg {
+  background: linear-gradient(179.99deg, #000 9.21%, #6d3874 70.06%, #ba4c6a 102.27%);
+
+}

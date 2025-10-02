@@ -55,7 +55,7 @@ const VideoContent = () => {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   return (
-    <div className="max-w-6xl mx-auto text-center text-white mt-20 p-4 space-y-4 text-3xl lg:text-5xl font-playfair">
+    <div className="max-w-6xl mx-auto text-center text-white mt-20 p-4 space-y-4 text-3xl lg:text-5xl font-playfair overflow-hidden">
       <motion.p
         ref={ref}
         initial={{ opacity: 0, x: 100 }}
@@ -84,7 +84,7 @@ const VideoContent = () => {
         {t('paraThree')}
       </motion.p>
 
-      <div className="relative w-full mt-4">
+      <div className="relative w-full mt-4 aspect-video">
         <motion.video
           ref={videoRef}
           initial={{ opacity: 0, y: 100 }}
@@ -92,26 +92,30 @@ const VideoContent = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           src="https://kijamii.com/Kijami_Final_Licensed_Music.mp4"
           controls
-          className="w-full rounded-lg"
+          className="w-full h-full rounded-lg object-cover"
           poster="/thumbnail.png"
         />
-        {!isPlaying && (
-          <div className="absolute inset-0 flex flex-row items-center justify-center bg-black/40">
-            <button
-              onClick={handlePlay}
-              className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 border border-white text-white rounded-full 
-                 bg-white/10 backdrop-blur-md transition transform hover:scale-110 hover:bg-white/20 
-                 hover:shadow-lg hover:shadow-white/30 cursor-pointer"
-            >
-              <span className="text-xl lg:text-3xl">▶</span>
-            </button>
 
-            <div className="flex flex-col font-jost items-start ml-4 text-white">
-              <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
-              <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
-            </div>
+        {/* Always in DOM, just fade */}
+        <div
+          className={`absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 ${
+            isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+        >
+          <button
+            onClick={handlePlay}
+            className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 border border-white text-white rounded-full 
+      bg-white/10 backdrop-blur-md transition transform hover:scale-110 hover:bg-white/20 
+      hover:shadow-lg hover:shadow-white/30 cursor-pointer"
+          >
+            <span className="text-xl lg:text-3xl">▶</span>
+          </button>
+
+          <div className="flex flex-col font-jost items-start ml-4 text-white">
+            <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
+            <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
           </div>
-        )}
+        </div>
 
         <motion.img
           initial={{ opacity: 0, x: -100 }}
