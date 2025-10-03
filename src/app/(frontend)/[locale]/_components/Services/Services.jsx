@@ -74,7 +74,6 @@ const Services = () => {
           <p className="italic font-playfair mt-8 sm:mt-12 lg:mt-18 text-3xl lg:text-5xl leading-[1em] text-white px-2 sm:px-0">
             {t('Service')}
           </p>
-
           <div
             className="group flex flex-col lg:flex-row justify-between relative mt-6 sm:mt-8 lg:mt-10 w-full h-full"
             onMouseLeave={() => setHoveredIndex(null)}
