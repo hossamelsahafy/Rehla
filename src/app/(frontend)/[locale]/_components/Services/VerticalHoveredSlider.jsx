@@ -49,7 +49,7 @@ const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => 
             <img
               src={c.image}
               alt={c.des}
-              className="w-48 h-48 object-cover rounded-lg mr-6 flex-shrink-0 clibPath transition-transform duration-300 hover:scale-105"
+              className="w-60 h-50 object-cover rounded-lg mr-6 flex-shrink-0 clibPath transition-transform duration-300 hover:scale-105"
             />
             <p className="text-lg text-white mt-4 font-medium uppercase text-left font-jost flex-1">
               {c.des}
