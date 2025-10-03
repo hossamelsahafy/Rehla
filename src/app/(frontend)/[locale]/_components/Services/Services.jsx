@@ -64,7 +64,6 @@ const Services = () => {
 
   return (
     <div className="hidden lg:flex relative w-full mt-10 lg:mt-20 h-screen">
-      {/* background */}
       <img
         src="/ServiceBg/bg-services.png"
         className="absolute inset-0 object-cover w-full h-full"
