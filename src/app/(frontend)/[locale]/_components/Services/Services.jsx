@@ -102,7 +102,7 @@ const Services = () => {
 
             <div className="slider-container lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 px-2 sm:px-0 h-[80%] overflow-hidden">
               {hoveredIndex !== null && (
-                <div className="flex gap-4 h-full">
+                <div className="flex gap-8 h-full">
                   <div className="flex-1 !h-auto">
                     <VerticalHoveredSlider
                       content={data[hoveredIndex].content}

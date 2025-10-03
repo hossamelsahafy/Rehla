@@ -7,7 +7,6 @@ import { Autoplay, FreeMode } from 'swiper/modules'
 import { useParams } from 'next/navigation'
 
 const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => {
-  // Slower default speed
   const { locale } = useParams()
   const [isPaused, setIsPaused] = useState(false)
   const sliderRef = useRef(null)
@@ -44,15 +43,17 @@ const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => 
         {duplicatedContent.map((c, i) => (
           <div
             key={i}
-            className="flex flex-col justify-center items-start py-4 h-full flex-shrink-0 px-4"
+            className={`flex flex-col justify-center ${locale === 'en' ? 'items-start' : 'items-center'} py-4 h-full flex-shrink-0 px-4"
+         `}
           >
             <img
               src={c.image}
               alt={c.des}
-              className="w-60 h-50 object-cover rounded-lg mr-6 flex-shrink-0 clibPath transition-transform duration-300 hover:scale-105"
+              className={`w-60 h-50 object-cover rounded-lg mr-6 flex-shrink-0 ${locale === 'en' ? 'clibPath' : 'clipPathAr'} transition-transform duration-300 hover:scale-105
+              `}
             />
-            <p className="text-lg text-white mt-4 font-medium uppercase text-left font-jost flex-1">
-              {c.des}
+            <p className="text-lg text-white mt-4 font-medium uppercase text-center font-jost flex-1">
+              {locale === 'en' ? c.des : c.desAr}
             </p>
           </div>
         ))}

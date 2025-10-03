@@ -90,6 +90,10 @@ body{
 .clibPath {
  clip-path:  polygon(0 0, 100% 0, 100% 66%, 75% 100%, 0 100%, 0 50%);
 }
+.clipPathAr {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0 66%);
+}
+
 .mask {
 
   clip-path: path("M293.801 1.39453L293.036 2.37305L232.469 79.7734H258.452L258.603 80.1592L293.123 169.185L293.442 170.009H64.5781L64.4268 169.626L29.3984 80.9834H1.75L2.52539 80.0029L64.5156 1.625L64.6973 1.39453H293.801Z");
@@ -115,6 +119,7 @@ body{
     transform: translateY(0%);
   }
 }
+
 @layer utilities {
   .animate-vertical-scroll {
     animation: verticalScroll linear infinite;
