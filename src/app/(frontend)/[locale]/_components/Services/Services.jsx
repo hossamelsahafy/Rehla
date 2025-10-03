@@ -87,17 +87,19 @@ const Services = () => {
                   onMouseEnter={() => setHoveredIndex(i)}
                 >
                   <p
-                    className={`uppercase text-xl sm:text-2xl lg:text-3xl leading-tight font-jost font-medium transition-all duration-300
-          ${
-            isActive
-              ? '!font-bold italic font-playfair text-white'
-              : 'text-white/60 group-hover:text-white hover:italic hover:font-playfair hover:font-bold hover:scale-105'
-          }
-        `}
+                    className={`uppercase text-xl hover:font-bold sm:text-2xl lg:text-3xl leading-tight font-jost font-medium 
+    transition-all duration-300 ease-in-out
+    ${
+      isActive
+        ? 'italic font-playfair !font-bold text-white scale-105'
+        : 'text-white/60 group-hover:text-white hover:italic hover:font-playfair hover:font-bold hover:scale-105'
+    }
+  `}
                     style={isActive ? { color: d.titleColor } : {}}
                   >
                     {locale === 'ar' ? d.titleAr : d.title}
                   </p>
+
                   {isActive && (
                     <p className="text-base sm:text-lg font-jost mt-2 font-semibold text-white transition-opacity duration-300">
                       / {locale === 'ar' ? d.desAr : d.des}

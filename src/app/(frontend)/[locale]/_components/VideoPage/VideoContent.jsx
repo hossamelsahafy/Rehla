@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useRef, useState } from 'react'
+
 function escapeRegExp(str = '') {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -44,82 +45,124 @@ const HighlightText = ({ text, highlights = [] }) => {
 const VideoContent = () => {
   const t = useTranslations('Video')
   const { locale } = useParams()
-  const { ref, inView } = useInView({
+
+  // Separate observers for each element
+  const [paraOneRef, paraOneInView] = useInView({
     triggerOnce: false,
-    threshold: 0.3,
+    threshold: 0.1,
   })
+
+  const [paraTwoRef, paraTwoInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  })
+
+  const [paraThreeRef, paraThreeInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  })
+
+  const [videoRef, videoInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  })
+
+  const [timeImageRef, timeImageInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  })
+
+  const videoElementRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
   const handlePlay = () => {
-    videoRef.current.play()
+    if (videoElementRef.current) {
+      videoElementRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
+  const handleVideoPause = () => {
+    setIsPlaying(false)
+  }
+
+  const handleVideoPlay = () => {
     setIsPlaying(true)
   }
-  const videoRef = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(false)
+
   return (
     <div className="max-w-6xl mx-auto text-center text-white mt-20 p-4 space-y-4 text-3xl lg:text-5xl font-playfair overflow-hidden">
+      {/* Para One */}
       <motion.p
-        ref={ref}
+        ref={paraOneRef}
         initial={{ opacity: 0, x: 100 }}
-        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+        animate={paraOneInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         " {t('paraOne')}
       </motion.p>
 
+      {/* Para Two */}
       <motion.div
-        ref={ref}
+        ref={paraTwoRef}
         initial={{ opacity: 0, x: -100 }}
-        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+        animate={paraTwoInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="mt-20"
       >
         <HighlightText text={t('paraTwo')} highlights={['innovation', 'culture']} />
       </motion.div>
 
+      {/* Para Three */}
       <motion.p
+        ref={paraThreeRef}
         initial={{ opacity: 0, y: 100 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+        animate={paraThreeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="mt-10 text-2xl lg:text-4xl text-end"
       >
         {t('paraThree')}
       </motion.p>
 
-      <div className="relative w-full mt-4 aspect-video">
+      {/* Video Section */}
+      <div ref={videoRef} className="relative w-full mt-4 aspect-video">
         <motion.video
-          ref={videoRef}
+          ref={videoElementRef}
           initial={{ opacity: 0, y: 100 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+          animate={videoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           src="https://kijamii.com/Kijami_Final_Licensed_Music.mp4"
           controls
           className="w-full h-full rounded-lg object-cover"
           poster="/thumbnail.png"
+          onPause={handleVideoPause}
+          onPlay={handleVideoPlay}
         />
 
-        {/* Always in DOM, just fade */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 ${
-            isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-        >
-          <button
-            onClick={handlePlay}
-            className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 border border-white text-white rounded-full 
-      bg-white/10 backdrop-blur-md transition transform hover:scale-110 hover:bg-white/20 
-      hover:shadow-lg hover:shadow-white/30 cursor-pointer"
-          >
-            <span className="text-xl lg:text-3xl">▶</span>
-          </button>
+        {/* Play Button Overlay */}
+        {!isPlaying && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300">
+            <button
+              onClick={handlePlay}
+              className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 border border-white text-white rounded-full 
+                bg-white/10 backdrop-blur-md transition transform hover:scale-110 hover:bg-white/20 
+                hover:shadow-lg hover:shadow-white/30 cursor-pointer"
+            >
+              <span className="text-xl lg:text-3xl">▶</span>
+            </button>
 
-          <div className="flex flex-col font-jost items-start ml-4 text-white">
-            <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
-            <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
+            <div className="flex flex-col font-jost items-start ml-4 text-white">
+              <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
+              <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
+            </div>
           </div>
-        </div>
+        )}
 
+        {/* Time Image */}
         <motion.img
+          ref={timeImageRef}
           initial={{ opacity: 0, x: -100 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+          animate={timeImageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           src="/time.png"
           alt="time"
