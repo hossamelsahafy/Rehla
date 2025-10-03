@@ -63,19 +63,24 @@ const Services = () => {
   ]
 
   return (
-    <div className="hidden lg:flex relative w-full mt-10 lg:mt-20">
-      <img src="/ServiceBg/bg-services.png" className="object-cover w-full" />
-      <div className="absolute inset-0">
+    <div className="hidden lg:flex relative w-full mt-10 lg:mt-20 h-screen">
+      {/* background */}
+      <img
+        src="/ServiceBg/bg-services.png"
+        className="absolute inset-0 object-cover w-full h-full"
+      />
+
+      <div className="absolute inset-0 flex items-center">
         <div className="max-w-6xl w-full h-full mx-auto px-4 sm:px-4 lg:px-20 py-4">
           <p className="italic font-playfair mt-8 sm:mt-12 lg:mt-18 text-3xl lg:text-5xl leading-[1em] text-white px-2 sm:px-0">
             {t('Service')}
           </p>
 
           <div
-            className="group flex flex-col lg:flex-row justify-between relative mt-6 sm:mt-8 lg:mt-10 w-full"
+            className="group flex flex-col lg:flex-row justify-between relative mt-6 sm:mt-8 lg:mt-10 w-full h-full"
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="flex flex-col lg:w-1/2 gap-4 sm:gap-5 items-start px-2 sm:px-0">
+            <div className="flex flex-col lg:w-1/2 gap-24 sm:gap-5 items-start px-2 sm:px-0">
               {data.map((d, i) => (
                 <div
                   key={i}
@@ -95,9 +100,24 @@ const Services = () => {
               ))}
             </div>
 
-            <div className="slider-container lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 px-2 sm:px-0 h-[300px] sm:h-[400px] lg:h-[800px]">
+            <div className="slider-container lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 px-2 sm:px-0 h-[80%] overflow-hidden">
               {hoveredIndex !== null && (
-                <VerticalHoveredSlider content={data[hoveredIndex].content} />
+                <div className="flex gap-4 h-full">
+                  <div className="flex-1 !h-auto">
+                    <VerticalHoveredSlider
+                      content={data[hoveredIndex].content}
+                      slidesPerView="4"
+                      reverse={false}
+                    />
+                  </div>
+                  <div className="flex-1 h-full">
+                    <VerticalHoveredSlider
+                      content={data[hoveredIndex].content}
+                      slidesPerView={4}
+                      reversed={true}
+                    />
+                  </div>
+                </div>
               )}
             </div>
           </div>

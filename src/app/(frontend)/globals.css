@@ -98,3 +98,25 @@ body{
   background: linear-gradient(179.99deg, #000 9.21%, #6d3874 70.06%, #ba4c6a 102.27%);
 
 }
+
+ @keyframes verticalScroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes verticalScrollReversed {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@layer utilities {
+  .animate-vertical-scroll {
+    animation: verticalScroll linear infinite;
+  }
+}
