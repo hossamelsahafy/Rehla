@@ -7,6 +7,7 @@ const Services = () => {
   const t = useTranslations('Services')
   const { locale } = useParams()
   const [hoveredIndex, setHoveredIndex] = useState(null)
+
   const data = [
     {
       title: 'Programming',
@@ -63,61 +64,72 @@ const Services = () => {
   ]
 
   return (
-    <div className="hidden lg:flex relative w-full mt-10 lg:mt-20 h-screen">
+    <div className="hidden lg:flex relative w-full h-screen">
       <img
         src="/ServiceBg/bg-services.png"
-        className="absolute inset-0 object-cover w-full h-full"
+        className="absolute inset-0 w-full h-full object-cover"
+        alt="Services background"
       />
 
       <div className="absolute inset-0 flex items-center">
-        <div className="max-w-6xl w-full h-full mx-auto px-4 sm:px-4 lg:px-20 py-4">
-          <p className="italic font-playfair mt-8 sm:mt-12 lg:mt-18 text-3xl lg:text-5xl leading-[1em] text-white px-2 sm:px-0">
-            {t('Service')}
-          </p>
-          <div
-            className="group flex flex-col lg:flex-row justify-between relative mt-6 sm:mt-8 lg:mt-10 w-full h-full"
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="flex flex-col lg:w-1/2 gap-24 sm:gap-5 items-start px-2 sm:px-0">
-              {data.map((d, i) => (
+        <div className="max-w-6xl w-full  h-full mx-auto px-6 lg:px-12 py-8 flex flex-col lg:flex-row justify-between">
+          <div className="flex flex-col lg:w-1/2 gap-2 ">
+            <p className="italic font-playfair mt-20 mb-40 text-3xl lg:text-5xl leading-[1em] text-white">
+              {t('Service')}
+            </p>
+
+            {data.map((d, i) => {
+              const isActive = hoveredIndex === i
+              return (
                 <div
                   key={i}
+                  className="group cursor-pointer transition-all duration-300"
                   onMouseEnter={() => setHoveredIndex(i)}
-                  style={{ color: hoveredIndex === i ? d.titleColor : '#ffffff60' }}
-                  className="w-full group/title"
                 >
-                  <p className="uppercase text-xl sm:text-2xl lg:text-3xl w-full transition-all duration-300 cursor-pointer hover:text-2xl sm:hover:text-3xl lg:hover:text-4xl hover:font-playfair hover:italic hover:font-bold leading-[91%] font-jost font-medium px-2 sm:px-0">
+                  <p
+                    className={`uppercase text-xl sm:text-2xl lg:text-3xl leading-tight font-jost font-medium transition-all duration-300
+          ${
+            isActive
+              ? '!font-bold italic font-playfair text-white'
+              : 'text-white/60 group-hover:text-white hover:italic hover:font-playfair hover:font-bold hover:scale-105'
+          }
+        `}
+                    style={isActive ? { color: d.titleColor } : {}}
+                  >
                     {locale === 'ar' ? d.titleAr : d.title}
                   </p>
-                  {hoveredIndex === i && (
-                    <p className="text-base sm:text-lg font-jost mt-2 sm:mt-3 font-semibold text-white px-2 sm:px-0">
+                  {isActive && (
+                    <p className="text-base sm:text-lg font-jost mt-2 font-semibold text-white transition-opacity duration-300">
                       / {locale === 'ar' ? d.desAr : d.des}
                     </p>
                   )}
                 </div>
-              ))}
-            </div>
+              )
+            })}
+          </div>
 
-            <div className="slider-container lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 px-2 sm:px-0 h-[80%] overflow-hidden">
-              {hoveredIndex !== null && (
-                <div className="flex gap-8 h-full">
-                  <div className="flex-1 !h-auto">
-                    <VerticalHoveredSlider
-                      content={data[hoveredIndex].content}
-                      slidesPerView="4"
-                      reverse={false}
-                    />
-                  </div>
-                  <div className="flex-1 h-full">
-                    <VerticalHoveredSlider
-                      content={data[hoveredIndex].content}
-                      slidesPerView={4}
-                      reversed={true}
-                    />
-                  </div>
+          <div
+            className="flex flex-1 lg:w-1/2 h-full group"
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {hoveredIndex !== null && (
+              <div className="flex gap-8 w-full h-full">
+                <div className="flex-1 h-full">
+                  <VerticalHoveredSlider
+                    content={data[hoveredIndex].content}
+                    slidesPerView={4}
+                    reversed={false}
+                  />
                 </div>
-              )}
-            </div>
+                <div className="flex-1 h-full">
+                  <VerticalHoveredSlider
+                    content={data[hoveredIndex].content}
+                    slidesPerView={4}
+                    reversed={true}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
