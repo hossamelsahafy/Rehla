@@ -46,7 +46,6 @@ const VideoContent = () => {
   const t = useTranslations('Video')
   const { locale } = useParams()
 
-  // Separate observers for each element
   const [paraOneRef, paraOneInView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -92,7 +91,6 @@ const VideoContent = () => {
 
   return (
     <div className="max-w-6xl mx-auto text-center text-white mt-20 p-4 space-y-4 text-3xl lg:text-5xl font-playfair overflow-hidden">
-      {/* Para One */}
       <motion.p
         ref={paraOneRef}
         initial={{ opacity: 0, x: 100 }}
@@ -102,7 +100,6 @@ const VideoContent = () => {
         " {t('paraOne')}
       </motion.p>
 
-      {/* Para Two */}
       <motion.div
         ref={paraTwoRef}
         initial={{ opacity: 0, x: -100 }}
@@ -113,7 +110,6 @@ const VideoContent = () => {
         <HighlightText text={t('paraTwo')} highlights={['innovation', 'culture']} />
       </motion.div>
 
-      {/* Para Three */}
       <motion.p
         ref={paraThreeRef}
         initial={{ opacity: 0, y: 100 }}
@@ -124,7 +120,6 @@ const VideoContent = () => {
         {t('paraThree')}
       </motion.p>
 
-      {/* Video Section */}
       <div ref={videoRef} className="relative w-full mt-4 aspect-video">
         <motion.video
           ref={videoElementRef}
@@ -139,7 +134,6 @@ const VideoContent = () => {
           onPlay={handleVideoPlay}
         />
 
-        {/* Play Button Overlay */}
         {!isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300">
             <button
@@ -158,7 +152,6 @@ const VideoContent = () => {
           </div>
         )}
 
-        {/* Time Image */}
         <motion.img
           ref={timeImageRef}
           initial={{ opacity: 0, x: -100 }}
