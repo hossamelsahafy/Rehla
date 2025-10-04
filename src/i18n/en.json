@@ -33,5 +33,38 @@
   },
   "Services": {
     "Service": "Services"
+  },
+  "Contact": {
+    "title": "Lets Talk",
+    "description": "Let's talk. We’re here to analyze data, unlock insights, build strategies, craft creative, manage media, and produce content that drives impact. Whether you’re looking to start a new project, connect with our team, or learn more about what we do, we’re just a message away.",
+    "form": {
+      "subject": "Subject",
+      "title": "Title",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "company": "Company",
+      "phoneNumber": "Phone Number"
+    },
+    "Buttons": [{ "name": "New Business" }, { "name": "Press & Events" }, { "name": "Other" }],
+    "markets": {
+      "saudiArabia": "Saudi Arabia",
+      "uae": "UAE",
+      "egypt": "Egypt",
+      "qatar": "Qatar",
+      "iraq": "Iraq",
+      "morocco": "Morocco",
+      "kuwait": "Kuwait",
+      "oman": "Oman",
+      "bahrain": "Bahrain",
+      "yemen": "Yemen",
+      "jordan": "Jordan",
+      "lebanon": "Lebanon",
+      "crossRegional": "Cross Regional",
+      "others": "Others"
+    },
+    "selectMarket": "Select Market*",
+    "yourMessage": "Your Message*",
+    "submit": "Submit"
   }
 }

@@ -125,3 +125,6 @@ body{
     animation: verticalScroll linear infinite;
   }
 }
+  .border-gradient-focus:focus {
+    border-image: linear-gradient(to right, #ff007a, #ff8c00, #ff007a) 1;
+  }

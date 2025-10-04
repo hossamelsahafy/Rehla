@@ -7,6 +7,7 @@ import ServedPlaces from './_components/ServedPlaces/ServedPlaces'
 import Work from './_components/Work/Work'
 import News from './_components/News/News'
 import Services from './_components/Services/Services'
+import Contact from './_components/ContactUs/Contact'
 export default function Home() {
   const t = useTranslations()
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Work />
       <Services />
       <News />
+      <Contact />
     </main>
   )
 }

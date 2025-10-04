@@ -105,7 +105,7 @@ const News = () => {
         </button>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-transparent pointer-events-none"></div>
     </div>
   )
 }
