@@ -71,10 +71,11 @@ const News = () => {
   return (
     <div className="w-full mx-auto newsBg px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
       <div className="max-w-6xl mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
-        {posts.slice(0, visibleCount).map((p, i) => (
+        {posts.map((p, i) => (
           <div
             key={i}
-            className="flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-300"
+            className={`flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-700 ease-in-out
+          ${i < visibleCount ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
           >
             <div className="w-full lg:w-1/2 mt-6 lg:mt-0 flex justify-center lg:block">
               <div className="w-full max-w-[300px] lg:max-w-none aspect-[4/3] overflow-hidden">
@@ -98,11 +99,12 @@ const News = () => {
       <div className="flex justify-center mt-8 lg:mt-12">
         <button
           onClick={handleToggle}
-          className="px-6 py-3 bg-transparent border text-white hover:text-black font-semibold rounded-lg hover:bg-white transition text-sm sm:text-base"
+          className="px-6 py-3 bg-transparent border cursor-pointer text-white hover:text-black font-semibold rounded-lg hover:bg-white transition text-sm sm:text-base"
         >
           {visibleCount === posts.length ? 'Show Less' : 'Show More'}
         </button>
       </div>
+
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white pointer-events-none"></div>
     </div>
   )
