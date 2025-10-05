@@ -11,6 +11,7 @@ import DnaDes from './_components/DnaDes'
 
 const Page = () => {
   const swiperRef = useRef(null)
+  const paginationRef = useRef(null)
 
   useEffect(() => {
     const swiper = swiperRef.current?.swiper
@@ -38,15 +39,15 @@ const Page = () => {
   return (
     <div className="relative h-screen w-full cursor-grab">
       <Swiper
-        ref={swiperRef}
+        modules={[Mousewheel, Pagination]}
+        pagination={{
+          clickable: true,
+          el: '.custom-pagination',
+        }}
         direction="horizontal"
         slidesPerView={1}
         speed={800}
         mousewheel={{ forceToAxis: true }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Mousewheel, Pagination]}
         className="h-full w-full"
       >
         <SwiperSlide>
@@ -64,6 +65,7 @@ const Page = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      <div className="custom-pagination absolute bottom-6 my-5 inset-x-0 flex justify-center z-50"></div>
     </div>
   )
 }
