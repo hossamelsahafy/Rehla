@@ -35,7 +35,7 @@ const MobileNav = ({
   }
 
   return (
-    <div className="md:hidden fixed bg-black w-full font-jost" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="md:hidden fixed bg-black z-10 w-full font-jost" dir={isRTL ? 'rtl' : 'ltr'}>
       <div
         className={`flex justify-between items-center p-4 ${isRTL ? 'text-right' : 'text-left'}`}
       >
@@ -63,11 +63,11 @@ const MobileNav = ({
         />
 
         <div
-          className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} h-full bg-bgSec  z-[9999] text-black w-full
-  flex flex-col items-start gap-8 p-6 
-  transition-all duration-300 ease-in-out transform
-  ${menuOpen ? 'translate-x-0 opacity-100' : isRTL ? 'translate-x-full' : '-translate-x-full'} opacity-0'}
-  shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}
+          className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} h-full w-full 
+        bg-bgSec z-[9999] text-black flex flex-col items-start gap-8 p-6
+        transition-all duration-300 ease-in-out transform
+        ${menuOpen ? 'translate-x-0 opacity-100' : isRTL ? 'translate-x-full' : '-translate-x-full'} opacity-0
+        shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}
         >
           <button
             className={`self-start text-white bg-black rounded-full p-2 mb-4 ${isRTL ? 'mr-auto ml-0' : 'mr-0 ml-auto'}`}

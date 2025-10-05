@@ -48,7 +48,7 @@ const WorksMobile = ({ locale, WorkContent }) => {
           ))}
         </Swiper>
 
-        <div className="custom-pagination absolute bottom-6 inset-x-0 flex justify-center z-50"></div>
+        <div className="custom-pagination absolute bottom-6 inset-x-0 flex justify-center z-1"></div>
       </div>
     </>
   )

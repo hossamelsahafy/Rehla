@@ -51,9 +51,8 @@ const PartOne = () => {
   return (
     <>
       <div className="relative w-full">
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
-        <div className="w-full bg-white mx-auto flex flex-col justify-center gap-10 overflow-hidden p-4 relative z-20">
-          {/* next content */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div>
+        <div className="w-full bg-white mx-auto flex flex-col justify-center gap-10 overflow-hidden p-4 relative z-0">
           <div className="flex mt-4 flex-col lg:flex-row justify-center gap-10 items-start lg:items-center">
             <svg
               width="116"
@@ -120,7 +119,7 @@ const PartOne = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-black -mt-4 p-10 flex flex-col justify-center items-start">
+      <div className="w-full bg-black -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
         <p className="font-playfair font-bold text-base md:text-[22px] leading-[20px] text-[#D4FF66] uppercase">
           {t('Follow')}
         </p>

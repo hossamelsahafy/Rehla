@@ -84,5 +84,23 @@
     "three": "Dubai Lynx / Grand Prix",
     "four": "Since 2011",
     "five": "In the MENA region"
+  },
+  "Works": {
+    "works": "Works",
+    "Locations": "Locations",
+    "Services": "Services",
+    "locations": [
+      { "name": "ALL" },
+      { "name": "Egypt" },
+      { "name": "KSA" },
+      { "name": "Regional" }
+    ],
+    "services": [
+      { "name": "ALL" },
+      { "name": "Programming" },
+      { "name": "CaseStudyies" },
+      { "name": "Adds" },
+      { "name": "Designs" }
+    ]
   }
 }
