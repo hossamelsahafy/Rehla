@@ -5,18 +5,18 @@ const WorksData = ({ data, locale }) => {
     <div className="relative w-full">
       <div className="fixed mr-10 lg:mr-0 top-0 right-0 w-[80%] h-full pointer-events-none z-0 bg-[url('/WorkBg/projects.png')] bg-cover bg-repeat-y bg-center"></div>
 
-      <div className="relative grid grid-cols-1 gap-10 p-6 md:p-8 sm:p-4">
+      <div className="relative grid grid-cols-1 gap-2 p-6 md:p-8 sm:p-4">
         {data.map((item, i) => (
           <div
             key={i}
-            className={`flex flex-row items-center gap-6
+            className={`flex flex-row items-center gap-4 mb-4
           ${i % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}
         `}
           >
             <img
               src={item.Image}
               alt={item.Name}
-              className={`w-[200px] h-[200px] md:w-[400px]  lg:my-0 md:h-[200px] sm:w-[300px] sm:h-[160px] object-contain rounded-lg flex-shrink-0 ${
+              className={`w-[200px] h-[200px] md:w-[400px]  md:h-[200px] sm:w-[300px] sm:h-[160px] object-contain rounded-lg flex-shrink-0 ${
                 locale === 'en' ? 'clibPath' : 'clipPathAr'
               }`}
             />
