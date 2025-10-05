@@ -36,7 +36,7 @@ const LogoSlider = ({ reverse = false }) => {
 
   return (
     <div
-      className="mt-8 md:mt-10 w-full overflow-hidden relative"
+      className="mt-8 md:mt-10 w-full overflow-hidden relative z-0"
       style={{
         ...(reverse ? { transform: 'scaleX(-1)' } : {}),
         ...(locale === 'ar' ? { direction: 'ltr' } : {}),

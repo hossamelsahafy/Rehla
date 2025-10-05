@@ -19,9 +19,9 @@ const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => 
       onMouseLeave={() => setIsPaused(false)}
       ref={sliderRef}
     >
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/80 to-transparent z-20"></div>
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/80 to-transparent z-10 "></div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/80 to-transparent z-10 "></div>
 
       <div
         className="flex flex-col"
