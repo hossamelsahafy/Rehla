@@ -66,5 +66,23 @@
     "selectMarket": "Select Market*",
     "yourMessage": "Your Message*",
     "submit": "Submit"
+  },
+  "About": {
+    "who": "Who we are",
+    "para": "We are an independent, award-winning advertising agency driven by innovation and culture.",
+    "SwapOne": "We know communication",
+    "SwapTwo": "We have grown digital",
+    "SwapThree": "We talk social",
+    "paraTwo": "—— AND we create work that resonates and drives growth",
+    "paraThree": "Kijamii brings cultural resonance for brands in the region through consumer insights, creative, social, paid media, production and studio. We ensure each service delivers impact, whether used individually or integrated together.",
+    "what": "What we do",
+    "titleDna": "How we do it",
+    "span": "OUR DNA",
+    "paraFour": "Our teams in Riyadh, Dubai, and Cairo collaborate seamlessly—sometimes sitting together physically, sometimes virtually, but always connected. With a diverse group of smart, creative minds, we work side by side (or screen by screen, it’s all the same in today’s digital age) to bring ideas to life.",
+    "Entertainment": "Entertainment Category",
+    "spantwo": "“Independent Agency Of the Year”",
+    "three": "Dubai Lynx / Grand Prix",
+    "four": "Since 2011",
+    "five": "In the MENA region"
   }
 }

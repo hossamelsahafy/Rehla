@@ -80,7 +80,15 @@ const Contact = () => {
         <p className="font-jost p-4 font-medium text-xl lg:text-2xl leading-[40px] text-white max-md:text-base">
           {t('description')}
         </p>
-        <Form form={form} buttons={buttons} market={markets} submit={t('submit')} m={m} s={s} />
+        <Form
+          form={form}
+          locale={locale}
+          buttons={buttons}
+          market={markets}
+          submit={t('submit')}
+          m={m}
+          s={s}
+        />
       </div>
     </div>
   )

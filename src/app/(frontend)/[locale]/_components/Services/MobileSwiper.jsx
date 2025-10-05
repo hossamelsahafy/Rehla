@@ -22,7 +22,10 @@ const MobileSwiper = ({ locale, activeData }) => {
         breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 20 } }}
       >
         {activeData.content.map((w, i) => (
-          <SwiperSlide key={i} className="flex flex-col items-center justify-center cursor-pointer">
+          <SwiperSlide
+            key={i}
+            className="flex mt-10 flex-col items-center justify-center cursor-pointer"
+          >
             <div className="flex flex-col items-center">
               <img
                 src={w.image}
