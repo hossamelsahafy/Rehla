@@ -30,7 +30,7 @@ const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
             <li
               key={i}
               onClick={() => {
-                setSelected(d) // ✅ now this works
+                setSelected(d)
                 setOpen(false)
               }}
               className="px-4 py-2 text-white text-sm cursor-pointer hover:bg-white/20 transition flex items-center gap-2"
