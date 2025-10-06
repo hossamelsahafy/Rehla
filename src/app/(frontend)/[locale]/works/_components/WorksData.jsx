@@ -9,24 +9,33 @@ const WorksData = ({ data, locale }) => {
         {data.map((item, i) => (
           <div
             key={i}
-            className={`flex flex-row items-center gap-4 mb-4
+            className={`flex w-full flex-row items-center gap-8 mb-4
           ${i % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}
         `}
           >
             <img
               src={item.Image}
               alt={item.Name}
-              className={`w-[200px] h-[200px] md:w-[400px]  md:h-[200px] sm:w-[300px] sm:h-[160px] object-contain rounded-lg flex-shrink-0 ${
+              className={`w-[150px] h-[150px] md:w-[400px] md:h-[300px] sm:w-[300px] sm:h-[250px] object-fill rounded-lg flex-shrink-0 ${
                 locale === 'en' ? 'clibPath' : 'clipPathAr'
               }`}
             />
 
-            <div className="flex flex-col max-w-lg md:max-w-md sm:max-w-full text-left">
-              <h3 className="text-white text-base md:text-lg  font-semibold">
+            <div
+              className={`flex flex-col max-w-lg md:max-w-md sm:max-w-full ${locale === 'en' ? 'text-left ' : 'text-right'} gap-2`}
+            >
+              <h3 className="text-white text-sm lg:text-lg md:text-lg font-semibold break-words">
                 {locale === 'ar' ? item.NameAr : item.Name}
               </h3>
-              <p className="text-white/70 mt-2 text-base md:text-sm sm:text-xs leading-relaxed">
+              <p className="text-white/70 text-sm md:text-sm sm:text-xs lg:text-lg leading-relaxed whitespace-nowrap">
                 {locale === 'ar' ? item.SubtitleAr : item.Subtitle}
+              </p>
+
+              <h3 className="text-white text-sm md:text-lg font-semibold lg:text-lg break-words">
+                {locale === 'ar' ? item.LocationAr : item.Location}
+              </h3>
+              <p className="text-white/70 text-sm md:text-sm sm:text-xs lg:text-lg leading-relaxed break-words">
+                {locale === 'ar' ? item.ServicesAr : item.Services}
               </p>
             </div>
           </div>

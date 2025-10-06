@@ -98,7 +98,7 @@
     "services": [
       { "name": "ALL" },
       { "name": "Programming" },
-      { "name": "CaseStudyies" },
+      { "name": "Case Studyies" },
       { "name": "Adds" },
       { "name": "Designs" }
     ]
