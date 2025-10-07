@@ -45,6 +45,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <head>
+        <link rel="icon" href="/Logo/Logo.png" type="image/png" />
+      </head>
       <body className={locale === 'ar' ? cairo.className : jost.className}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavBar />

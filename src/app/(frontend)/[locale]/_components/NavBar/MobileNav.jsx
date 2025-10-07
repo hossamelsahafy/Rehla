@@ -47,7 +47,12 @@ const MobileNav = ({
           <FaBars className="w-6 h-6" />
         </button>
         <Link href={`/${locale}`} className="text-2xl font-medium text-gray-900 tracking-[0.02em]">
-          Rehla
+          <div className="flex flex-row items-center">
+            <img src="/Logo/Logo.png" className="object-contain w-10" />
+            <p className="text-white font-playfair italic font-bold">
+              {locale === 'en' ? 'Rehla' : 'رحلة'}
+            </p>
+          </div>
         </Link>
         <div className="w-6 h-6"></div>
       </div>
@@ -79,7 +84,12 @@ const MobileNav = ({
 
           <div className="w-full flex justify-center mb-6">
             <Link href={`/${locale}`}>
-              <img src="/logo.png" alt="Logo" className="h-12 object-contain" />
+              <div className="flex flex-row-reverse items-center gap-2">
+                <p className="font-playfair italic text-2xl font-extrabold">
+                  {locale === 'en' ? 'REHLA' : 'رحلة'}
+                </p>
+                <img src="/Logo/Logo.png" alt="Logo" className="h-12 object-contain" />
+              </div>
             </Link>
           </div>
 

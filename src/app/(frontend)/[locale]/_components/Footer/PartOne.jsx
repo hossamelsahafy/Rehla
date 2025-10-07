@@ -140,8 +140,10 @@ const PartOne = () => {
             ))}
           </div>
 
-          {/* Right text */}
-          <p className="italic font-playfair text-white mt-2 text-2xl lg:mt-0">Rehla</p>
+          <div className="flex items-center">
+            <img src="/Logo/Logo.png" alt="Rehla logo" className="object-contain w-20" />
+            <p className="italic font-playfair text-white text-2xl">Rehla</p>
+          </div>
         </div>
       </div>
     </>
