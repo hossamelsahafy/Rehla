@@ -82,13 +82,13 @@ const MobileNav = ({
             <FiX className="w-6 h-6" />
           </button>
 
-          <div className="w-full flex justify-center mb-6">
+          <div className="w-full flex justify-center items-center mb-6">
             <Link href={`/${locale}`}>
-              <div className="flex flex-row-reverse items-center gap-2">
-                <p className="font-playfair italic text-2xl font-extrabold">
+              <div className="flex items-center">
+                <img src="/Logo/Logob.png" alt="Logo" className="h-12 object-contain" />
+                <p className="font-playfair italic text-3xl font-extrabold">
                   {locale === 'en' ? 'REHLA' : 'رحلة'}
                 </p>
-                <img src="/Logo/Logo.png" alt="Logo" className="h-12 object-contain" />
               </div>
             </Link>
           </div>
