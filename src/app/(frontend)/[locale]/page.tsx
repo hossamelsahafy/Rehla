@@ -11,25 +11,25 @@ import Contact from './_components/ContactUs/Contact'
 import Loading from './_components/Loading'
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [fade, setFade] = useState(false)
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
+  // useEffect(() => {
+  //   document.body.style.overflow = 'hidden'
 
-    const timer = setTimeout(() => {
-      setFade(true)
-      setTimeout(() => {
-        setLoading(false)
-        document.body.style.overflow = 'auto'
-      }, 600)
-    }, 12000)
+  //   const timer = setTimeout(() => {
+  //     setFade(true)
+  //     setTimeout(() => {
+  //       setLoading(false)
+  //       document.body.style.overflow = 'auto'
+  //     }, 600)
+  //   }, 12000)
 
-    return () => {
-      clearTimeout(timer)
-      document.body.style.overflow = 'auto'
-    }
-  }, [])
+  //   return () => {
+  //     clearTimeout(timer)
+  //     document.body.style.overflow = 'auto'
+  //   }
+  // }, [])
 
   return (
     <main className="relative">

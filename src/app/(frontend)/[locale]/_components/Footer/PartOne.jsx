@@ -14,37 +14,23 @@ import {
 } from 'react-icons/fa6'
 
 const links = [
-  { icon: <FaXTwitter />, href: '#' },
-  { icon: <FaTiktok />, href: '#' },
-  { icon: <FaInstagram />, href: '#' },
-  { icon: <FaLinkedin />, href: '#' },
-  { icon: <FaFacebook />, href: '#' },
-  { icon: <FaYoutube />, href: '#' },
-  { icon: <FaVimeo />, href: '#' },
+  {
+    icon: <FaInstagram />,
+    href: 'https://www.instagram.com/rehlamarketing?igsh=bHQ0eDk3MXQwY2F0&utm_source=qr',
+  },
+  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/company/rehla-marketing-agency/' },
+  { icon: <FaFacebook />, href: 'https://www.facebook.com/share/16xhjLWB9M/?mibextid=wwXIfr' },
 ]
 const PartOne = () => {
   const t = useTranslations('Footer')
   const offices = [
     {
-      city: 'Dubai Office',
-      cityAr: 'مكتب دبي',
-      address: 'Office 704, Publishing Pavilion, Production City',
-      addressAr: 'المكتب 704، جناح النشر، مدينة الإنتاج',
-      email: 'dubai@kijamii.com',
-    },
-    {
       city: 'Riyadh Office',
       cityAr: 'مكتب الرياض',
       address: 'Office 86, 25 Square Building, Anas Ibn Malek, Al Yasmeen Dist., Riyadh',
       addressAr: 'المكتب 86، مبنى 25 سكوير، أنس بن مالك، حي الياسمين، الرياض',
-      email: 'riyadh@kijamii.com',
-    },
-    {
-      city: 'Cairo Office',
-      cityAr: 'مكتب القاهرة',
-      address: '13 Road 314, New Maadi, Cairo, Egypt',
-      addressAr: '١٣ شارع ٣١٤، المعادي الجديدة، القاهرة، مصر',
-      email: 'cairo@kijamii.com',
+      email: 'Rehlamarketing@gmail.com',
+      phone: '+966564107629',
     },
   ]
   const { locale } = useParams()
@@ -98,7 +84,7 @@ const PartOne = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:border-t  lg:border-t-[#7272FD] mt-10">
+          <div className="grid grid-cols-1 justify-items-center  lg:border-t  lg:border-t-[#7272FD] mt-10">
             {offices.map((o, idx) => (
               <div
                 key={idx}
@@ -113,6 +99,14 @@ const PartOne = () => {
                 <a href={`mailto:${o.email}`} className="text-blue-600 hover:underline mt-auto">
                   {o.email}
                 </a>
+                <a
+                  href={`https://wa.me/${o.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 hover:underline mt-1"
+                >
+                  {o.phone}
+                </a>
                 <div className="lg:hidden md:border border-b border-[#7272FD] mt-auto" />
               </div>
             ))}
@@ -125,7 +119,6 @@ const PartOne = () => {
         </p>
 
         <div className="flex flex-col lg:flex-row justify-between w-full items-start lg:items-center mt-6 gap-6">
-          {/* Social links */}
           <div className="flex flex-row flex-wrap gap-3 md:gap-5 justify-start">
             {links.map((l, i) => (
               <Link
