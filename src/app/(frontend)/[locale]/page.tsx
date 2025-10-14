@@ -11,26 +11,40 @@ import Contact from './_components/ContactUs/Contact'
 import Loading from './_components/Loading'
 
 export default function Home() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [fade, setFade] = useState(false)
+  const [loadedComponents, setLoadedComponents] = useState({
+    services: false,
+    // Add other critical components here if needed
+  })
 
-  // useEffect(() => {
-  //   document.body.style.overflow = 'hidden'
+  const handleComponentLoaded = (componentName: string) => {
+    setLoadedComponents((prev) => ({
+      ...prev,
+      [componentName]: true,
+    }))
+  }
 
-  //   const timer = setTimeout(() => {
-  //     setFade(true)
-  //     setTimeout(() => {
-  //       setLoading(false)
-  //       document.body.style.overflow = 'auto'
-  //     }, 600)
-  //   }, 12000)
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
 
-  //   return () => {
-  //     clearTimeout(timer)
-  //     document.body.style.overflow = 'auto'
-  //   }
-  // }, [])
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [loading])
+  useEffect(() => {
+    const allLoaded = Object.values(loadedComponents).every(Boolean)
 
+    if (allLoaded) {
+      setTimeout(() => setFade(true), 300)
+      setTimeout(() => setLoading(false), 1000)
+    }
+  }, [loadedComponents])
   return (
     <main className="relative">
       {loading && (
@@ -49,7 +63,7 @@ export default function Home() {
         <VideoContent />
         <ServedPlaces />
         <Work />
-        <Services />
+        <Services onLoadComplete={() => handleComponentLoaded('services')} />
         <News />
         <Contact />
       </div>

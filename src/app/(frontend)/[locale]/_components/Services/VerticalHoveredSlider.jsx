@@ -39,7 +39,7 @@ const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => 
             } py-4 h-full flex-shrink-0 px-4`}
           >
             <img
-              src={c.image}
+              src={c.image.url}
               alt={c.des}
               className={`w-60 h-50 object-cover rounded-lg mr-6 flex-shrink-0 ${
                 locale === 'en' ? 'clibPath' : 'clipPathAr'
