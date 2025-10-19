@@ -9,42 +9,37 @@ import Services from './_components/Services/Services'
 import News from './_components/News/News'
 import Contact from './_components/ContactUs/Contact'
 import Loading from './_components/Loading'
+import GetServices from './_actions/getServices'
+import GetServedPlaces from './_actions/GetServedPlaces'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
   const [fade, setFade] = useState(false)
-  const [loadedComponents, setLoadedComponents] = useState({
-    services: false,
-    // Add other critical components here if needed
-  })
-
-  const handleComponentLoaded = (componentName: string) => {
-    setLoadedComponents((prev) => ({
-      ...prev,
-      [componentName]: true,
-    }))
-  }
+  const [servicesData, setServicesData] = useState([])
+  const [logosData, setLogosData] = useState([])
 
   useEffect(() => {
-    if (loading) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-
-    // Cleanup function to reset overflow when component unmounts
+    document.body.style.overflow = loading ? 'hidden' : 'auto'
     return () => {
       document.body.style.overflow = 'auto'
     }
   }, [loading])
-  useEffect(() => {
-    const allLoaded = Object.values(loadedComponents).every(Boolean)
 
-    if (allLoaded) {
+  useEffect(() => {
+    const getAllData = async () => {
+      const [services, logos] = await Promise.all([GetServices(), GetServedPlaces()])
+
+      if (services) setServicesData(services)
+      if (logos) setLogosData(logos)
+
+      // Trigger fade first, then hide loading screen
       setTimeout(() => setFade(true), 300)
       setTimeout(() => setLoading(false), 1000)
     }
-  }, [loadedComponents])
+
+    getAllData()
+  }, [])
+
   return (
     <main className="relative">
       {loading && (
@@ -61,9 +56,9 @@ export default function Home() {
         <PhoneHeader />
         <Works />
         <VideoContent />
-        <ServedPlaces />
+        <ServedPlaces sliders={logosData} />
         <Work />
-        <Services onLoadComplete={() => handleComponentLoaded('services')} />
+        <Services backendData={servicesData} />
         <News />
         <Contact />
       </div>

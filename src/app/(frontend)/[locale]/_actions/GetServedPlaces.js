@@ -1,6 +1,6 @@
 export default async function GetServices() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/services`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/ServedPlaces?limit=1000`, {
       cache: 'no-store',
     })
 

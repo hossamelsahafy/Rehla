@@ -3,18 +3,15 @@ import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import VerticalHoveredSlider from './VerticalHoveredSlider'
 import ServiceMobile from './ServicesMobile'
-import GetServices from '@/app/(frontend)/[locale]/_actions/getServices'
-const Services = ({ onLoadComplete }) => {
+const Services = ({ backendData }) => {
   const t = useTranslations('Services')
   const { locale } = useParams()
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [data, setData] = useState([])
 
   const colors = ['#4051f4', '#CC4221', '#CCB0FA', '#E67E84', '#21CC89', '#2ECCFA']
-  const getData = async () => {
+  const getData = () => {
     try {
-      const backendData = await GetServices()
-
       const reversed = backendData.slice().reverse()
       const coloredData = reversed.map((section, i) => ({
         ...section,
@@ -24,16 +21,12 @@ const Services = ({ onLoadComplete }) => {
       setData(coloredData)
     } catch (error) {
       console.error('Error fetching services:', error)
-    } finally {
-      if (onLoadComplete) {
-        onLoadComplete()
-      }
     }
   }
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [backendData])
 
   return (
     <>

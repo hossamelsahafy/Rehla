@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Slider from './Slider'
 import Footer from './Footer'
-const ServedPlaces = () => {
+const ServedPlaces = ({ sliders }) => {
   const t = useTranslations('ServedPlaces')
+
   const cities = [
     {
       name: 'cairo',
@@ -149,9 +150,9 @@ const ServedPlaces = () => {
       </div>
 
       <div className="overflow-hidden">
-        <Slider reverse={false} />
-        <Slider reverse={true} />
-        <Slider reverse={false} />
+        {sliders.map((s) => (
+          <Slider key={s.id} reverse={s.reverse} logos={s.logos} />
+        ))}
       </div>
       <Footer />
     </>

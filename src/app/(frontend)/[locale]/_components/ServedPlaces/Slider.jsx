@@ -2,18 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Slider from 'react-infinite-logo-slider'
 import { useParams } from 'next/navigation'
-const LogoSlider = ({ reverse = false }) => {
-  const logos = [
-    '/Swiper/swiper1.png',
-    '/Swiper/swiper2.png',
-    '/Swiper/swiper3.png',
-    '/Swiper/swiper4.png',
-    '/Swiper/swiper5.png',
-    '/Swiper/swiper6.png',
-    '/Swiper/swiper7.png',
-    '/Swiper/swiper8.png',
-  ]
-
+const LogoSlider = ({ reverse = false, logos }) => {
   const [slideWidth, setSlideWidth] = useState(200)
   const [mounted, setMounted] = useState(false)
   const { locale } = useParams()
@@ -44,7 +33,7 @@ const LogoSlider = ({ reverse = false }) => {
     >
       <Slider
         width={`${slideWidth}px`}
-        duration={30}
+        duration={60}
         blurBorders={true}
         blurBorderColor={'#000000'}
         blurBorderSize={50}
@@ -52,11 +41,11 @@ const LogoSlider = ({ reverse = false }) => {
       >
         {logos.map((src, idx) => (
           <Slider.Slide
-            className="px-1"
+            className="px-6"
             key={idx}
             style={reverse ? { transform: 'scaleX(-1)' } : {}}
           >
-            <img src={src} alt={`Logo ${idx}`} className="h-16 object-contain" />
+            <img src={src.image.url} alt={`Logo ${idx}`} className="h-16 object-contain" />
           </Slider.Slide>
         ))}
       </Slider>
