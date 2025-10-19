@@ -36,50 +36,52 @@ export default function Loading() {
   }, [])
 
   return (
-    <div className="flex flex-col max-w-6xl mx-auto w-full items-center justify-center  bg-black overflow-hidden relative">
-      <motion.img
-        src="/Logo/Logo.png"
-        alt="Logo"
-        className="object-contain w-40 mb-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      />
+    <div>
+      <div className="flex flex-col max-h- max-w-6xl mx-auto w-full items-center justify-center  bg-black overflow-hidden relative">
+        <motion.img
+          src="/Logo/Logo.png"
+          alt="Logo"
+          className="object-contain w-40 mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        />
 
-      <div className="relative h-20 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          {step === 1 ? (
-            <motion.p
-              key="text1"
-              className="font-playfair italic text-white text-5xl"
-              variants={textVariants}
-              initial="hiddenRight"
-              animate="center"
-              exit="exitLeft"
-              transition={{
-                duration: 3,
-                ease: 'easeInOut',
-              }}
-            >
-              Rehla Marketing
-            </motion.p>
-          ) : (
-            <motion.p
-              key="text2"
-              className="font-playfair italic text-white text-5xl"
-              variants={textVariants}
-              initial="hiddenLeft"
-              animate="center"
-              exit="exitRight"
-              transition={{
-                duration: 3,
-                ease: 'easeInOut',
-              }}
-            >
-              From Vision To Voice
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <div className="relative h-20 flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            {step === 1 ? (
+              <motion.p
+                key="text1"
+                className="font-playfair italic text-white text-5xl"
+                variants={textVariants}
+                initial="hiddenRight"
+                animate="center"
+                exit="exitLeft"
+                transition={{
+                  duration: 3,
+                  ease: 'easeInOut',
+                }}
+              >
+                Rehla Marketing
+              </motion.p>
+            ) : (
+              <motion.p
+                key="text2"
+                className="font-playfair italic text-white text-5xl"
+                variants={textVariants}
+                initial="hiddenLeft"
+                animate="center"
+                exit="exitRight"
+                transition={{
+                  duration: 3,
+                  ease: 'easeInOut',
+                }}
+              >
+                From Vision To Voice
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   )
