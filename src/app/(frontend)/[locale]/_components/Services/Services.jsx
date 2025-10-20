@@ -87,6 +87,7 @@ const Services = ({ backendData }) => {
                     <VerticalHoveredSlider
                       content={data[hoveredIndex].content}
                       slidesPerView={4}
+                      speed={20000}
                       reversed={false}
                     />
                   </div>
@@ -95,6 +96,7 @@ const Services = ({ backendData }) => {
                       content={data[hoveredIndex].content}
                       slidesPerView={4}
                       reversed={true}
+                      speed={20000}
                     />
                   </div>
                 </div>

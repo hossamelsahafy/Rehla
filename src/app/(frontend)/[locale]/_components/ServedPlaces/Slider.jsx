@@ -45,7 +45,7 @@ const LogoSlider = ({ reverse = false, logos }) => {
             key={idx}
             style={reverse ? { transform: 'scaleX(-1)' } : {}}
           >
-            <img src={src.image.url} alt={`Logo ${idx}`} className="h-16 object-contain" />
+            <img src={src.image.url} alt={`Logo ${idx}`} className="h-10 object-contain" />
           </Slider.Slide>
         ))}
       </Slider>

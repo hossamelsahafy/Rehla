@@ -130,9 +130,8 @@ body{
     border-image: linear-gradient(to right, #ff007a, #ff8c00, #ff007a) 1;
   }
 
-/* ✅ Scrollbar styling */
 .scrollable-container {
-  max-height: 70vh; /* shows roughly 4 cards per view */
+  max-height: 70vh;
   scrollbar-width: thin;
   scrollbar-color: #d4ff66 rgba(255, 255, 255, 0.1);
 }
