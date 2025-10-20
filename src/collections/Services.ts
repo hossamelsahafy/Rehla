@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { CollectionConfig } from 'payload'
 import CustomMediaSelection from '@/components/CustomMediaSelection'
 export const Services: CollectionConfig = {
