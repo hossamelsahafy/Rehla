@@ -14,7 +14,7 @@ export default function Loading() {
   const [step, setStep] = useState(1)
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden' // Prevent scroll
+    document.body.style.overflow = 'hidden'
     let isMounted = true
 
     const startAnimationCycle = async () => {

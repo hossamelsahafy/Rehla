@@ -6,7 +6,7 @@ import Work from './_components/Work/Work'
 import ServicesData from './_components/Services/ServicesData'
 import News from './_components/News/News'
 import Contact from './_components/ContactUs/Contact'
-import LoadingWrapper from './_components/LoadingWrapper'
+
 export default function Home() {
   return (
     <main className="relative">
