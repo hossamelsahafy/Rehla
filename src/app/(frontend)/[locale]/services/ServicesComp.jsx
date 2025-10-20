@@ -1,10 +1,9 @@
-'use client'
 import React from 'react'
-import Services from '../_components/Services/Services'
+import ServicesData from '../_components/Services/ServicesData'
 const ServicesComp = () => {
   return (
     <div>
-      <Services />
+      <ServicesData />
     </div>
   )
 }

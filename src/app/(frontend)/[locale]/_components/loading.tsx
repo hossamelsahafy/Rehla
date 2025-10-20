@@ -36,23 +36,23 @@ export default function Loading() {
   }, [])
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center w-full h-full relative">
+    <div>
+      <div className="flex flex-col max-h- max-w-6xl mx-auto w-full items-center justify-center  bg-black overflow-hidden relative">
         <motion.img
           src="/Logo/Logo.png"
           alt="Logo"
-          className="object-contain w-40 mb-10 z-10"
+          className="object-contain w-40 mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         />
 
-        <div className="relative h-20 flex items-center justify-center w-full z-10">
+        <div className="relative h-20 flex items-center justify-center">
           <AnimatePresence mode="wait">
             {step === 1 ? (
               <motion.p
                 key="text1"
-                className="font-playfair italic text-white text-5xl text-center px-4"
+                className="font-playfair italic text-white text-5xl"
                 variants={textVariants}
                 initial="hiddenRight"
                 animate="center"
@@ -67,7 +67,7 @@ export default function Loading() {
             ) : (
               <motion.p
                 key="text2"
-                className="font-playfair italic text-white text-5xl text-center px-4"
+                className="font-playfair italic text-white text-5xl"
                 variants={textVariants}
                 initial="hiddenLeft"
                 animate="center"

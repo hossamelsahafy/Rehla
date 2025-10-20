@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import WorksDeskTop from './WorksDesktop'
 import WorksMobile from './WorkMobile'

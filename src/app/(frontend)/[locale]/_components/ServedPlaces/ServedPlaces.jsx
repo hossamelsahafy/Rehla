@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useTranslations } from 'next-intl'
 import Slider from './Slider'
 import Footer from './Footer'
