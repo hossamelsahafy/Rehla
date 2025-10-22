@@ -1,33 +1,10 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { Cairo, Jost, Playfair_Display, Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import NavBar from './_components/NavBar/NavBar'
 import Footer from './_components/Footer/PartOne'
 import '../globals.css'
-
-const jost = Jost({
-  subsets: ['latin'],
-  style: ['italic', 'normal'],
-  weight: ['400', '500', '700'],
-  variable: '--font-jost',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  style: ['italic', 'normal'],
-  weight: ['400', '700'],
-  variable: '--font-playfair',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-inter',
-})
-
-const cairo = Cairo({ subsets: ['arabic'] })
 
 export default async function LocaleLayout({
   children,
@@ -48,7 +25,11 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/Logo/Logo.png" type="image/png" />
       </head>
-      <body className={locale === 'ar' ? cairo.className : jost.className}>
+      <body
+        style={{
+          fontFamily: 'Arial, Helvetica, sans-serif',
+        }}
+      >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavBar />
           {children}

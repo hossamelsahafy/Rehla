@@ -31,21 +31,18 @@ const LogoSlider = ({ reverse = false, logos }) => {
         ...(locale === 'ar' ? { direction: 'ltr' } : {}),
       }}
     >
-      <Slider
-        width={`${slideWidth}px`}
-        duration={60}
-        blurBorders={true}
-        blurBorderColor={'#000000'}
-        blurBorderSize={50}
-        hoverPause={true}
-      >
+      <Slider width={`${slideWidth}px`} duration={60} hoverPause={true}>
         {logos.map((src, idx) => (
           <Slider.Slide
             className="px-6"
             key={idx}
             style={reverse ? { transform: 'scaleX(-1)' } : {}}
           >
-            <img src={src.image.url} alt={`Logo ${idx}`} className="h-10 object-contain" />
+            <img
+              src={src.image.url}
+              alt={`Logo ${idx}`}
+              className="h-10 object-contain invert-100"
+            />
           </Slider.Slide>
         ))}
       </Slider>

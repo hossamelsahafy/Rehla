@@ -47,7 +47,7 @@ const Contact = () => {
               ></path>
             </svg>
           </div>
-          <p className="font-jost p-4 font-medium text-2xl lg:text-4xl leading-[40px] text-white max-md:text-base">
+          <p className="p-4 font-medium text-2xl lg:text-4xl leading-[40px] text-white max-md:text-base">
             {t('title')}
           </p>
           <div
@@ -77,7 +77,7 @@ const Contact = () => {
             </svg>
           </div>
         </div>
-        <p className="font-jost p-4 font-medium text-xl lg:text-2xl leading-[40px] text-white max-md:text-base">
+        <p className="p-4 font-medium text-xl lg:text-2xl leading-[40px] text-white max-md:text-base">
           {t('description')}
         </p>
         <Form

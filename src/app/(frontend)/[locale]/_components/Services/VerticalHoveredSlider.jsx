@@ -45,7 +45,7 @@ const VerticalHoveredSlider = ({ content, speed = 10000, reversed = false }) => 
                 locale === 'en' ? 'clibPath' : 'clipPathAr'
               } transition-transform duration-300 hover:scale-105`}
             />
-            <p className="text-lg text-white mt-4 font-medium uppercase text-center font-jost flex-1">
+            <p className="text-lg text-white mt-4 font-medium uppercase text-center flex-1">
               {locale === 'en' ? c.des : c.desAr}
             </p>
           </div>

@@ -26,7 +26,7 @@ const HighlightText = ({ text, highlights = [] }) => {
 
         if (isHighlight) {
           return (
-            <span key={i} className="text-[#CCB0FA]">
+            <span key={i} className="text-[#841624]">
               {part}
             </span>
           )
@@ -90,7 +90,7 @@ const VideoContent = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto text-center text-white mt-20 p-4 space-y-4 text-3xl lg:text-5xl font-playfair overflow-hidden">
+    <div className="max-w-6xl mx-auto text-center text-TextColor mt-20 p-4 space-y-4 text-3xl lg:text-5xl overflow-hidden">
       <motion.p
         ref={paraOneRef}
         initial={{ opacity: 0, x: 100 }}
@@ -145,7 +145,7 @@ const VideoContent = () => {
               <span className="text-xl lg:text-3xl">▶</span>
             </button>
 
-            <div className="flex flex-col font-jost items-start ml-4 text-white">
+            <div className="flex flex-col items-start ml-4 text-white">
               <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
               <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
             </div>
@@ -159,7 +159,7 @@ const VideoContent = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           src="/time.png"
           alt="time"
-          className={`absolute -top-5 ${locale === 'en' ? 'left-0' : 'right-0'} w-40 md:w-60 md:-top-10`}
+          className={`absolute  ${locale === 'en' ? 'left-4' : 'right-2'} w-40 md:w-60 md:top-4`}
         />
       </div>
     </div>

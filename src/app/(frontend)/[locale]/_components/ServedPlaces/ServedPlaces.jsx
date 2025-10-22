@@ -131,9 +131,9 @@ const ServedPlaces = ({ sliders }) => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto p-4 mt-20 flex flex-col gap-12 lg:gap-20 justify-center">
-        <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-6 lg:gap-10 text-white">
-          <p className="text-xl lg:text-2xl font-jost font-semibold text-center lg:text-left">
+      <div className="max-w-6xl mx-auto p-4 mt-20 text-TextColor flex flex-col gap-12 lg:gap-20 justify-center">
+        <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-6 lg:gap-10 ">
+          <p className="text-xl lg:text-2xl font-semibold text-center lg:text-left">
             {t('servingEverywhere')}
           </p>
 
@@ -141,7 +141,7 @@ const ServedPlaces = ({ sliders }) => {
             <div key={c.name} className="flex flex-row gap-2 sm:gap-4 justify-center items-center">
               {c.svg}
 
-              <p className="text-base sm:text-lg lg:text-4xl text-white transition-all duration-150 hover:font-playfair hover:italic">
+              <p className="text-base sm:text-lg lg:text-4xl transition-all duration-150 hover:italic">
                 {t(`cities.${c.name}`)}
               </p>
             </div>

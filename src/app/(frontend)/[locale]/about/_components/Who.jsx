@@ -50,14 +50,14 @@ const Who = () => {
             fill="#D4FF66"
           ></path>
         </svg>
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-playfair font-semibold leading-tight md:leading-[105px] text-white text-center sm:text-left">
+        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-semibold leading-tight md:leading-[105px] text-TextColor text-center sm:text-left">
           {t('who')}
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-10 w-full text-white">
+      <div className="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-10 w-full text-TextColor">
         <div className="flex flex-row gap-5 items-center">
-          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed  font-jost max-w-full lg:max-w-[400px] xl:max-w-[420px] lg:text-left flex items-center text-center justify-center lg:justify-between">
+          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed max-w-full lg:max-w-[400px] xl:max-w-[420px] lg:text-left flex items-center text-center justify-center lg:justify-between">
             <span className={`hidden lg:inline-flex mb-auto ${locale === 'ar' ? 'mr-20' : ''}`}>
               <svg
                 width="10"
@@ -101,7 +101,7 @@ const Who = () => {
             {swaps.map((text, i) => (
               <p
                 key={i}
-                className={`absolute font-jost leading-tight md:leading-[105px] text-lg md:text-xl lg:text-3xl xl:text-5xl 
+                className={`absolute leading-tight md:leading-[105px] text-lg md:text-xl lg:text-3xl xl:text-5xl 
                   transition-opacity duration-1000 ease-in-out text-center px-4 w-full whitespace-nowrap`}
                 style={{
                   color: colors[i],
@@ -113,7 +113,7 @@ const Who = () => {
             ))}
           </div>
 
-          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white lg:uppercase font-jost leading-relaxed md:leading-[50px] text-center w-full px-4">
+          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-TextColor lg:uppercase leading-relaxed md:leading-[50px] text-center w-full px-4">
             {t('paraTwo')}
           </p>
         </div>

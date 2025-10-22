@@ -75,10 +75,10 @@ const PartOne = () => {
             </svg>
 
             <div>
-              <p className="text-3xl leading-[40px] font-semibold text-[#333] font-jost max-md:text-[25px]">
+              <p className="text-3xl leading-[40px] font-semibold text-[#333] max-md:text-[25px]">
                 {t('localTalents')}
               </p>
-              <p className="text-[22px] max-w-[709px] leading-[30px] text-[#333] font-jost max-md:text-[22px]">
+              <p className="text-[22px] max-w-[709px] leading-[30px] text-[#333] max-md:text-[22px]">
                 {t('teamsMena')}
               </p>
             </div>
@@ -113,8 +113,8 @@ const PartOne = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-black -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
-        <p className="font-playfair font-bold text-base md:text-[22px] leading-[20px] text-[#D4FF66] uppercase">
+      <div className="w-full bg-bgSec -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
+        <p className="font-bold text-base md:text-[22px] leading-[20px] text-[#D4FF66] uppercase">
           {t('Follow')}
         </p>
 
@@ -135,7 +135,7 @@ const PartOne = () => {
 
           <div className="flex items-center">
             <img src="/Logo/Logo.png" alt="Rehla logo" className="object-contain w-20" />
-            <p className="italic font-playfair text-white text-2xl">Rehla</p>
+            <p className="italic text-white text-2xl">Rehla</p>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ const Footer = () => {
   }
   const { locale } = useParams()
   return (
-    <div className="bgRidial w-full py-30 mt-10 flex items-center">
+    <div className="bgRidial w-full py-30 my-10 flex items-center">
       <div className="max-w-6xl mx-auto flex  flex-row items-center justify-center gap-8 md:gap-20 px-4">
         <div className={`${locale === 'ar' ? 'rotate-180' : ''} `}>
           <motion.svg
@@ -75,7 +75,7 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="text-white text-xl md:text-2xl font-jost font-semibold mb-2"
+            className="text-white text-xl md:text-2xl font-semibold mb-2"
           >
             {t('FooterHeaderOne')}
           </motion.p>
@@ -85,10 +85,10 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="text-white text-xl md:text-2xl font-jost font-semibold flex flex-wrap justify-center"
+            className="text-white text-xl md:text-2xl font-semibold flex flex-wrap justify-center"
           >
             {t('FooterHeaderTwo')}
-            <span className={locale === 'ar' ? 'mr-2 text-[#CC4222]' : 'ml-2 text-[#CC4222]'}>
+            <span className={locale === 'ar' ? 'mr-2 text-[#841624]' : 'ml-2 text-[#841624]'}>
               {t('Span')}
             </span>
           </motion.p>

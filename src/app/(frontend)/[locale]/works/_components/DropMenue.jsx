@@ -7,13 +7,13 @@ const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
 
   return (
     <div className="inline-block w-40">
-      <p className="text-white text-base font-thin mb-2">{title}</p>
+      <p className="text-TextColor text-base font-thin mb-2">{title}</p>
 
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full gap-2 rounded-lg bg-black/70 px-4 py-2 text-white text-sm hover:bg-black/80 transition"
+        className="flex items-center justify-between w-full gap-2 rounded-lg bg-black/70 px-4 py-2 text-TextColor text-sm hover:bg-black/80 transition"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center text-white gap-2">
           {(selected?.name === 'ALL' || selected?.name === 'الكل') && <Icon className="text-xl" />}
           <span>{selected?.name || 'ALL'}</span>
         </div>

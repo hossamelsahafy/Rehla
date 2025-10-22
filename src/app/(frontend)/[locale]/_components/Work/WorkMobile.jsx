@@ -71,7 +71,7 @@ const WorkMobile = ({ featured, work, locale }) => {
         className="absolute inset-0 w-full h-[80vh] object-cover -z-10"
       />
 
-      <div className="flex uppercase font-jost font-medium text-xl flex-row gap-2 items-center justify-center">
+      <div className="flex uppercase font-medium text-xl flex-row gap-2 items-center justify-center">
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -84,7 +84,7 @@ const WorkMobile = ({ featured, work, locale }) => {
           initial="hidden"
           whileInView="visible"
           variants={textLtrVariant}
-          className="italic font-playfair"
+          className="italic "
           viewport={{ once: false, amount: 0.3 }}
         >
           Works
@@ -95,7 +95,7 @@ const WorkMobile = ({ featured, work, locale }) => {
         initial="hidden"
         whileInView="visible"
         variants={textRtlVariant}
-        className="font-playfair text-center mt-3 italic text-xl"
+        className="text-center mt-3 italic text-xl"
       >
         {featured}
       </motion.p>
@@ -147,7 +147,7 @@ const WorkMobile = ({ featured, work, locale }) => {
                       className={`w-full h-full ${locale === 'en' ? 'clibPath' : 'clipPathAr'} object-cover`}
                     />
                   </div>
-                  <p className="text-center mb-4 text-white text-xs sm:text-sm leading-snug font-medium font-jost uppercase line-clamp-2 w-32 sm:w-36">
+                  <p className="text-center mb-4 text-white text-xs sm:text-sm leading-snug font-medium  uppercase line-clamp-2 w-32 sm:w-36">
                     {locale === 'ar' ? w.NameAr : w.Name}
                   </p>
                 </motion.div>

@@ -31,10 +31,10 @@ const DnaHeader = ({ title, span }) => {
       </svg>
 
       <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-playfair font-semibold leading-tight md:leading-[105px] text-white">
+        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-semibold leading-tight md:leading-[105px] text-TextColor">
           {title}
         </p>
-        <p className="text-white lg:-mt-4">{span}</p>
+        <p className="text-TextColor lg:-mt-4">{span}</p>
       </div>
     </div>
   )

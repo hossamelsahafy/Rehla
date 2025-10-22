@@ -51,7 +51,7 @@ const DnaDes = () => {
   const { locale } = useParams()
 
   return (
-    <div className="max-w-6xl mx-auto p-4 md:p-6 flex flex-col gap-6 md:gap-8 lg:gap-10 min-h-full">
+    <div className="max-w-6xl text-TextColor mx-auto p-4 md:p-6 flex flex-col gap-6 md:gap-8 lg:gap-10 min-h-full">
       <DnaHeader title={t('titleDna')} span={t('span')} />
 
       <div className="scrollable-container grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 overflow-y-auto px-2">
@@ -60,10 +60,10 @@ const DnaDes = () => {
             key={index}
             className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all duration-300"
           >
-            <h3 className="text-2xl md:text-3xl font-playfair font-semibold text-[#D4FF66] mb-4">
+            <h3 className="text-2xl md:text-3xl font-semibold text-hover mb-4">
               {locale === 'en' ? item.title : item.titleAr}
             </h3>
-            <p className="text-white/80 font-jost text-base md:text-lg leading-relaxed">
+            <p className="text-black/80 text-base md:text-lg leading-relaxed">
               {locale === 'en' ? item.des : item.desAr}
             </p>
           </div>

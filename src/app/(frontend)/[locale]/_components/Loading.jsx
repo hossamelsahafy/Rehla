@@ -47,14 +47,13 @@ export default function Loading() {
           transition={{ duration: 1 }}
         />
 
-        {/* Text Container */}
         <div className="w-full flex items-center justify-center z-10">
           <div className="relative max-w-6xl w-full h-20 flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="wait">
               {step === 1 ? (
                 <motion.p
                   key="text1"
-                  className="font-playfair italic text-white text-5xl text-center px-4"
+                  className="italic text-white text-5xl text-center px-4"
                   variants={textVariants}
                   initial="hiddenRight"
                   animate="center"
@@ -69,7 +68,7 @@ export default function Loading() {
               ) : (
                 <motion.p
                   key="text2"
-                  className="font-playfair italic text-white text-5xl text-center px-4"
+                  className="italic text-white text-5xl text-center px-4"
                   variants={textVariants}
                   initial="hiddenLeft"
                   animate="center"

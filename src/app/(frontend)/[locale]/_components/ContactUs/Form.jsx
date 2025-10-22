@@ -125,12 +125,12 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col lg:flex-row gap-20 justify-center items-center lg:items-start lg:justify-between w-full">
         <div className="flex flex-col justify-start items-start mt-20 text-white">
-          <div className="font-jost text-2xl lg:text-4xl cursor-pointer whitespace-nowrap">
+          <div className="text-2xl lg:text-4xl cursor-pointer whitespace-nowrap">
             {buttons.map((b, i) => (
               <p
                 key={i}
                 onClick={() => handleSelectButton(i)}
-                className={`${selectedButton === i ? 'text-white font-playfair italic transition-all duration-300' : 'text-white/50 hover:text-white/80 transition-all duration-100'} my-4`}
+                className={`${selectedButton === i ? 'text-white italic transition-all duration-300' : 'text-white/50 hover:text-white/80 transition-all duration-100'} my-4`}
               >
                 {b.name}
               </p>
@@ -172,7 +172,7 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
         </div>
 
         <div className="flex flex-col mb-10 lg:mt-24 justify-center items-start text-white whitespace-nowrap">
-          <p className="uppercase font-jost text-xl lg:text-2xl max-sm:text-sm leading-[160%] font-medium text-white mb-6">
+          <p className="uppercase text-xl lg:text-2xl max-sm:text-sm leading-[160%] font-medium text-white mb-6">
             {s}
           </p>
 
@@ -207,14 +207,14 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
                     ></path>
                   </svg>
                 )}
-                <p className="text-lg font-jost whitespace-nowrap">{label}</p>
+                <p className="text-lg whitespace-nowrap">{label}</p>
               </div>
             ))}
           </div>
 
           <div className="hidden lg:flex flex-3 flex-col mt-10 w-full h-full">
             <p
-              className={`uppercase ${locale === 'en' ? 'text-left' : 'text-right'} font-jost text-xl lg:text-2xl leading-[28.16px] font-medium text-white/70 group-focus-within:text-white`}
+              className={`uppercase ${locale === 'en' ? 'text-left' : 'text-right'} text-xl lg:text-2xl leading-[28.16px] font-medium text-white/70 group-focus-within:text-white`}
             >
               {m}
             </p>
@@ -233,7 +233,7 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
         <button
           type="submit"
           disabled={loading}
-          className={`flex items-center justify-center gap-2 bg-transparent text-white uppercase font-jost text-lg font-medium border border-white rounded-full px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-white hover:text-black ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`flex items-center justify-center gap-2 bg-transparent text-white uppercase text-lg font-medium border border-white rounded-full px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-white hover:text-black ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           {loading ? (
             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

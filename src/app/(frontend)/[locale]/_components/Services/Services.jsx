@@ -10,16 +10,11 @@ const Services = ({ backendData }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [data, setData] = useState([])
 
-  const colors = ['#4051f4', '#CC4221', '#CCB0FA', '#E67E84', '#21CC89', '#2ECCFA']
   const getData = () => {
     try {
       const reversed = backendData.slice().reverse()
-      const coloredData = reversed.map((section, i) => ({
-        ...section,
-        titleColor: colors[i % colors.length],
-      }))
 
-      setData(coloredData)
+      setData(reversed)
     } catch (error) {
       console.error('Error fetching services:', error)
     }
@@ -41,7 +36,7 @@ const Services = ({ backendData }) => {
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-6xl w-full  h-full mx-auto px-6 lg:px-12 py-8 flex flex-col lg:flex-row justify-between">
             <div className="flex flex-col lg:w-1/2 gap-2 ">
-              <p className="italic font-playfair mt-20 mb-40 text-3xl lg:text-5xl leading-[1em] text-white">
+              <p className="italic mt-20 mb-40 text-3xl lg:text-5xl leading-[1em] text-white">
                 {t('Service')}
               </p>
 
@@ -54,21 +49,20 @@ const Services = ({ backendData }) => {
                     onMouseEnter={() => setHoveredIndex(i)}
                   >
                     <p
-                      className={`uppercase text-xl hover:font-bold sm:text-2xl lg:text-3xl leading-tight font-jost font-medium 
+                      className={`uppercase text-xl hover:font-bold sm:text-2xl lg:text-3xl leading-tight  font-medium 
                       transition-all duration-300 ease-in-out
                       ${
                         isActive
-                          ? 'italic font-playfair !font-bold text-white scale-105'
-                          : 'text-white/60 group-hover:text-white hover:italic hover:font-playfair hover:font-bold hover:scale-105'
+                          ? 'italic  !font-bold text-hover scale-105'
+                          : 'text-white/60 group-hover:text-white hover:italic  hover:font-bold hover:scale-105'
                       }
                       `}
-                      style={isActive ? { color: d.titleColor } : {}}
                     >
                       {locale === 'ar' ? d.titleAr : d.title}
                     </p>
 
                     {isActive && (
-                      <p className="text-base sm:text-lg font-jost mt-2 font-semibold text-white transition-opacity duration-300">
+                      <p className="text-base sm:text-lg  mt-2 font-semibold text-white transition-opacity duration-300">
                         / {locale === 'ar' ? d.descriptionAr : d.description}
                       </p>
                     )}

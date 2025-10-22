@@ -4,17 +4,7 @@ import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
 
-const MobileNav = ({
-  locale,
-  navLinks,
-  menuOpen,
-  setMenuOpen,
-  switchPath,
-  otherLocale,
-  t,
-  length,
-  mounted,
-}) => {
+const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherLocale, t }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [activeLink, setActiveLink] = useState(null)
 
@@ -35,7 +25,7 @@ const MobileNav = ({
   }
 
   return (
-    <div className="md:hidden fixed bg-black z-10 w-full font-jost" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="md:hidden fixed text-white z-10 w-full" dir={isRTL ? 'rtl' : 'ltr'}>
       <div
         className={`flex justify-between items-center p-4 ${isRTL ? 'text-right' : 'text-left'}`}
       >
@@ -49,9 +39,7 @@ const MobileNav = ({
         <Link href={`/${locale}`} className="text-2xl font-medium text-gray-900 tracking-[0.02em]">
           <div className="flex flex-row items-center">
             <img src="/Logo/Logo.png" className="object-contain w-10" />
-            <p className="text-white font-playfair italic font-bold">
-              {locale === 'en' ? 'Rehla' : 'رحلة'}
-            </p>
+            <p className="text-white italic font-bold">{locale === 'en' ? 'Rehla' : 'رحلة'}</p>
           </div>
         </Link>
         <div className="w-6 h-6"></div>
@@ -69,13 +57,13 @@ const MobileNav = ({
 
         <div
           className={`absolute top-0 ${isRTL ? 'right-0' : 'left-0'} h-full w-full 
-        bg-bgSec z-[9999] text-black flex flex-col items-start gap-8 p-6
+        bg-bgSec z-[9999]  flex flex-col items-start gap-8 p-6
         transition-all duration-300 ease-in-out transform
         ${menuOpen ? 'translate-x-0 opacity-100' : isRTL ? 'translate-x-full' : '-translate-x-full'} opacity-0
         shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}
         >
           <button
-            className={`self-start text-white bg-black rounded-full p-2 mb-4 ${isRTL ? 'mr-auto ml-0' : 'mr-0 ml-auto'}`}
+            className={`self-start  bg-black rounded-full p-2 mb-4 ${isRTL ? 'mr-auto ml-0' : 'mr-0 ml-auto'}`}
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -85,8 +73,8 @@ const MobileNav = ({
           <div className="w-full flex justify-center items-center mb-6">
             <Link href={`/${locale}`}>
               <div className="flex items-center">
-                <img src="/Logo/Logob.png" alt="Logo" className="h-12 object-contain" />
-                <p className="font-playfair italic text-3xl font-extrabold">
+                <img src="/Logo/Logo.png" alt="Logo" className="h-12 object-contain" />
+                <p className=" italic text-3xl font-extrabold">
                   {locale === 'en' ? 'REHLA' : 'رحلة'}
                 </p>
               </div>
@@ -96,7 +84,7 @@ const MobileNav = ({
           <nav className={`w-full flex flex-col gap-6 ${isRTL ? 'items-end' : 'items-start'}`}>
             <Link
               href={`/${locale}`}
-              className={`text-black font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
+              className={`font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
                 activeLink === `/${locale}` ? 'opacity-40' : ''
               } ${isRTL ? 'text-right' : 'text-left'}`}
               onClick={() => handleClick(`/${locale}`)}
@@ -112,7 +100,7 @@ const MobileNav = ({
               <Link
                 key={index}
                 href={`/${locale}${link.href}`}
-                className={`text-black font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
+                className={`font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
                   activeLink === `/${locale}${link.href}` ? 'opacity-40' : ''
                 } ${isRTL ? 'text-right' : 'text-left'}`}
                 onClick={() => handleClick(`/${locale}${link.href}`)}
@@ -121,15 +109,6 @@ const MobileNav = ({
                   className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse justify-end' : 'flex-row justify-start'}`}
                 >
                   {activeLink === `/${locale}${link.href}` ? '// ' : '/ '} {link.label}
-                  {link.href === '/basket' && mounted && length > 0 && (
-                    <span
-                      className={`bg-white text-gray-900 text-xs rounded-full h-5 w-5 flex items-center justify-center ${
-                        isRTL ? 'mr-2' : 'ml-1'
-                      }`}
-                    >
-                      {length}
-                    </span>
-                  )}
                 </div>
               </Link>
             ))}

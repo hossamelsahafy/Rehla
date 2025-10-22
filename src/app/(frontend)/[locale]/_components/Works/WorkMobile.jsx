@@ -37,7 +37,7 @@ const WorksMobile = ({ locale, WorkContent }) => {
                   alt={`Card image ${i}`}
                   className="imagebg w-full object-contain"
                 />
-                <h3 className="text-2xl md:text-3xl text-start font-medium uppercase font-inter mt-4 mb-4 text-white">
+                <h3 className="text-2xl md:text-3xl text-start font-medium uppercase mt-4 mb-4 text-white">
                   {locale === 'ar' ? w.titleAr : w.title}
                 </h3>
                 <p className="text-lg text-start text-[#ffffff50] font-bold uppercase">

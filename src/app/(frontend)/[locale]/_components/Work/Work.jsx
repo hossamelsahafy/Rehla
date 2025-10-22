@@ -373,14 +373,14 @@ const Work = () => {
 
   return (
     <>
-      <div className="hidden lg:flex w-full flex-col items-center p-4 mt-20 overflow-hidden">
-        <div className="flex flex-row justify-between items-center w-full max-w-7xl mb-12">
+      <div className="hidden lg:flex w-full flex-col items-center p-4 my-20 overflow-hidden">
+        <div className="flex flex-row justify-between items-center w-full max-w-7xl mb-12 text-TextColor">
           <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="italic font-playfair text-2xl sm:text-3xl md:text-4xl leading-[1em] text-white flex-1"
+            className="italic text-2xl sm:text-3xl md:text-4xl leading-[1em] flex-1"
           >
             {t('Featured')}
           </motion.p>
@@ -437,14 +437,14 @@ const Work = () => {
                       variants={cardVariant}
                       className="flex flex-col items-start text-left group overflow-visible w-full min-w-[160px] max-w-[320px]"
                     >
-                      <div className="relative rounded-lg shadow-lg overflow-hidden w-full">
+                      <div className="relative rounded-lg overflow-hidden w-full">
                         <img
                           src={w.Image}
                           alt={w.Name}
                           className={`object-cover ${locale === 'en' ? 'clibPath' : 'clipPathAr'} w-full h-48 sm:h-56 md:h-64 transition-transform duration-300 group-hover:scale-105`}
                         />
                       </div>
-                      <p className="mt-4 text-white text-lg md:text-xl lg:text-2xl leading-[1.3] font-medium font-jost uppercase">
+                      <p className="mt-4 text-TextColor text-lg md:text-xl lg:text-2xl leading-[1.3] font-medium  uppercase">
                         {locale === 'ar' ? w.NameAr : w.Name}
                       </p>
                     </motion.div>

@@ -24,15 +24,15 @@ const MobileSwiper = ({ locale, activeData }) => {
         {activeData.content.map((w, i) => (
           <SwiperSlide
             key={i}
-            className="flex mt-10 flex-col items-center justify-center cursor-pointer"
+            className="flex mt-10 flex-col text-TextColor items-center justify-center cursor-pointer"
           >
             <div className="flex flex-col items-center">
               <img
-                src={w.image}
+                src={w.image.url}
                 alt={`Card ${i}`}
                 className={`w-72 ${locale === 'en' ? 'clibPath' : 'clipPathAr'} h-72 object-cover rounded-md`}
               />
-              <p className="text-sm md:text-base text-white font-jost my-4 text-center">
+              <p className="text-sm md:text-base my-4 text-center">
                 {locale === 'ar' ? w.desAr : w.des}
               </p>
             </div>
