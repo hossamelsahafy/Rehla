@@ -250,13 +250,13 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
               >
                 <path
                   d="M6.54168 10.023L2.5004 3H6.18786L10.2725 10.023H8.50624L6.18786 18H2.5004L4.77497 10.023H6.54168Z"
-                  fill="#B6FE00"
+                  fill="#841624"
                   stroke="white"
                   strokeWidth="0.5"
                 ></path>
                 <path
                   d="M14.7692 10.023L10.7279 3H14.4154L18.5 10.023H16.7338L14.4154 18H10.7279L13.0025 10.023H14.7692Z"
-                  fill="#B6FE00"
+                  fill="#841624"
                   stroke="white"
                   strokeWidth="0.5"
                 ></path>

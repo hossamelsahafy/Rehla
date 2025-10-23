@@ -51,7 +51,7 @@ const PartOne = () => {
               <g clipPath="url(#clip0_2104_52026)">
                 <path
                   d="M67.8929 113.983H0.000244141L16.5002 53.5H29.5002L0.000244141 0H67.8929L91.5557 57.6447L67.8929 113.983Z"
-                  fill="#B6FE00"
+                  fill="#841624"
                 ></path>
                 <path
                   d="M29.2995 53.3749L0.000209808 0H26.7343L56.3477 53.3749H43.5425L26.7343 114H0.000209808L16.4909 53.3749H29.2995Z"
@@ -103,7 +103,7 @@ const PartOne = () => {
                   href={`https://wa.me/${o.phone.replace(/\D/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-600 hover:underline mt-1"
+                  className="text-[#841624] hover:underline mt-1"
                 >
                   {o.phone}
                 </a>
@@ -114,7 +114,7 @@ const PartOne = () => {
         </div>
       </div>
       <div className="w-full bg-bgSec -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
-        <p className="font-bold text-base md:text-[22px] leading-[20px] text-[#D4FF66] uppercase">
+        <p className="font-bold text-base md:text-[22px] leading-[20px] text-white uppercase">
           {t('Follow')}
         </p>
 

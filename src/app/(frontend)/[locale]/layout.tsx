@@ -49,8 +49,13 @@ export async function generateMetadata({
   const siteTitle = locale === 'ar' ? 'رحلة' : 'Rehla'
 
   const descriptionByLocale: Record<string, string> = {
-    en: '',
-    ar: '',
+    en: 'Rehla Marketing is a full-service digital marketing agency that helps brands grow through creative strategies, data-driven campaigns, and innovative digital solutions. We specialize in marketing, branding, advertising, content, analytics, and custom software development.',
+    ar: 'رحلة ماركتنج هي وكالة تسويق رقمي متكاملة تساعد العلامات التجارية على النمو من خلال استراتيجيات إبداعية وحملات قائمة على البيانات وحلول رقمية مبتكرة. نحن متخصصون في التسويق، والعلامة التجارية، والإعلانات، والمحتوى، والتحليلات، وتطوير البرمجيات المخصصة.',
+  }
+
+  const keywordsByLocale: Record<string, string> = {
+    en: 'Rehla Marketing, digital marketing agency, branding, advertising, content strategy, analytics, CRM, custom software development, SEO, social media marketing, creative marketing, web development',
+    ar: 'رحلة ماركتنج, وكالة تسويق رقمي, العلامة التجارية, الإعلانات, استراتيجية المحتوى, التحليلات, إدارة علاقات العملاء, تطوير البرمجيات, التسويق عبر السوشيال ميديا, تحسين محركات البحث, وكالة تسويق إبداعية, تطوير المواقع',
   }
 
   const ogLocale = locale === 'ar' ? 'ar_EG' : 'en_US'
@@ -61,6 +66,9 @@ export async function generateMetadata({
       template: `${siteTitle} - %s`,
     },
     description: descriptionByLocale[locale],
+    other: {
+      keywords: keywordsByLocale[locale],
+    },
     alternates: {
       languages: {
         en: '/en',
@@ -86,7 +94,6 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: siteTitle,
       description: descriptionByLocale[locale],
-      // images: ['/Main.png'],
     },
     icons: {
       icon: [{ url: '/icon.png' }],

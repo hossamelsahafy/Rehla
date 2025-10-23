@@ -65,7 +65,10 @@ const AboutUs = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="custom-pagination absolute bottom-6 my-5 inset-x-0 flex justify-center z-1"></div>
+      <div
+        ref={paginationRef}
+        className="custom-pagination absolute bottom-6 my-5 inset-x-0 flex justify-center z-1"
+      ></div>
     </div>
   )
 }

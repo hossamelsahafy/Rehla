@@ -9,8 +9,8 @@ export async function generateMetadata({ params }) {
   }
 
   const descriptions = {
-    en: '',
-    ar: '',
+    en: 'Explore Rehla Marketing’s portfolio of successful projects in marketing, branding, advertising, and digital solutions. See how our creative strategies and data-driven execution help brands grow and achieve measurable results.',
+    ar: 'استعرض أعمال رحلة ماركتنج الناجحة في مجالات التسويق، والعلامة التجارية، والإعلانات، والحلول الرقمية. شاهد كيف تساعد استراتيجياتنا الإبداعية وتنفيذنا القائم على البيانات العلامات التجارية على النمو وتحقيق نتائج ملموسة.',
   }
 
   return {
@@ -22,7 +22,8 @@ export async function generateMetadata({ params }) {
     },
   }
 }
-const page = () => {
+const page = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 4000))
   return (
     <div>
       <WorksComp />
