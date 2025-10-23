@@ -86,7 +86,7 @@ const News = () => {
             </div>
 
             <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col justify-center">
-              <span className="uppercase text-[15px] sm:text-[16px] lg:text-[17.25px] font-medium mb-3 text-des">
+              <span className="uppercase text-[15px] sm:text-[16px] lg:text-[17.25px] font-medium mb-3 text-TextColor">
                 {p.type}
               </span>
               <h3 className="text-lg sm:text-xl lg:text-xl text-TextColor italic">{p.title}</h3>

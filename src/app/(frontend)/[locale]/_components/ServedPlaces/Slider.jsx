@@ -31,7 +31,7 @@ const LogoSlider = ({ reverse = false, logos }) => {
         ...(locale === 'ar' ? { direction: 'ltr' } : {}),
       }}
     >
-      <Slider width={`${slideWidth}px`} duration={130} hoverPause={true}>
+      <Slider width={`${slideWidth}px`} duration={150} hoverPause={true}>
         {repeatedLogos.map((src, idx) => (
           <Slider.Slide
             className="px-6"

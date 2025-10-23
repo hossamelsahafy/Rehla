@@ -182,9 +182,7 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
                 key={key}
                 onClick={() => setSelectedMarket(key)}
                 className={`flex items-center gap-2 cursor-pointer transition-all duration-300 ${
-                  selectedMarket === key
-                    ? 'text-[#841624] font-bold'
-                    : 'text-white/70 hover:text-white'
+                  selectedMarket === key ? 'text-white font-bold' : 'text-white/70 hover:text-white'
                 }`}
               >
                 {selectedMarket === key && (

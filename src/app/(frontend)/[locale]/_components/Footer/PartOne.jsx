@@ -113,7 +113,7 @@ const PartOne = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-bgSec -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
+      <div className="w-full -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
         <p className="font-bold text-base md:text-[22px] leading-[20px] text-white uppercase">
           {t('Follow')}
         </p>
