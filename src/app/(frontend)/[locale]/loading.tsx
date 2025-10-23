@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function Loading() {
   const [show, setShow] = useState(true)
 
-  // disable scroll while loading is shown
   useEffect(() => {
     if (show) {
       document.body.style.overflow = 'hidden'
@@ -13,7 +12,6 @@ export default function Loading() {
       document.body.style.overflow = ''
     }
 
-    // clean up when component unmounts
     return () => {
       document.body.style.overflow = ''
     }
