@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body{
-    background-color: white;
+    background-color: black;
       scrollbar-gutter: stable;
 }
 
@@ -11,7 +11,7 @@ body{
   --color-des: #841624;
   --color-bgSec: #841624;
   --color-bgHover: #841624;
-  --color-TextColor: black;
+  --color-TextColor: white;
 
 }
 @theme {
@@ -19,7 +19,7 @@ body{
     --color-des: #841624;
     --color-bgSec: #841624;
     --color-bgHover: #841624;
-    --color-TextColor: black;
+    --color-TextColor: white;
   }
 
   .images {

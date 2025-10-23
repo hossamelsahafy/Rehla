@@ -182,7 +182,9 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
                 key={key}
                 onClick={() => setSelectedMarket(key)}
                 className={`flex items-center gap-2 cursor-pointer transition-all duration-300 ${
-                  selectedMarket === key ? 'text-[#D4FF66]' : 'text-white/70 hover:text-white'
+                  selectedMarket === key
+                    ? 'text-[#841624] font-bold'
+                    : 'text-white/70 hover:text-white'
                 }`}
               >
                 {selectedMarket === key && (
@@ -195,14 +197,14 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
                   >
                     <path
                       d="M2.63863 11.919L2.05226 12.9506L7.43658 16.9901L8.78274 15.1939L2.63863 11.919Z"
-                      fill="#D4FF66"
-                      stroke="#D4FF66"
+                      fill="#841624"
+                      stroke="#841624"
                       strokeWidth="1.67709"
                     ></path>
                     <path
                       d="M10.578 12.9535L8.78314 12.0561L14.0196 1.53954L16.1016 1.42545L10.578 12.9535Z"
-                      fill="#D4FF66"
-                      stroke="#D4FF66"
+                      fill="#841624"
+                      stroke="#841624"
                       strokeWidth="1.67709"
                     ></path>
                   </svg>
