@@ -17,10 +17,10 @@ const LogoSlider = ({ reverse = false, logos }) => {
     updateWidth()
     window.addEventListener('resize', updateWidth)
     setMounted(true)
-
     return () => window.removeEventListener('resize', updateWidth)
   }, [])
 
+  const repeatedLogos = [...logos, ...logos, ...logos, ...logos]
   if (!mounted) return null
 
   return (
@@ -31,18 +31,14 @@ const LogoSlider = ({ reverse = false, logos }) => {
         ...(locale === 'ar' ? { direction: 'ltr' } : {}),
       }}
     >
-      <Slider width={`${slideWidth}px`} duration={60} hoverPause={true}>
-        {logos.map((src, idx) => (
+      <Slider width={`${slideWidth}px`} duration={130} hoverPause={true}>
+        {repeatedLogos.map((src, idx) => (
           <Slider.Slide
             className="px-6"
             key={idx}
             style={reverse ? { transform: 'scaleX(-1)' } : {}}
           >
-            <img
-              src={src.image.url}
-              alt={`Logo ${idx}`}
-              className="h-10 object-contain invert-100"
-            />
+            <img src={src.image.url} alt={`Logo ${idx}`} className="h-10 object-contain" />
           </Slider.Slide>
         ))}
       </Slider>

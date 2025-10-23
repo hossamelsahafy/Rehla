@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -42,8 +41,7 @@ const HighlightText = ({ text, highlights = [] }) => {
   )
 }
 
-const VideoContent = () => {
-  const t = useTranslations('Video')
+const VideoContent = ({ t }) => {
   const { locale } = useParams()
 
   const [paraOneRef, paraOneInView] = useInView({
@@ -159,7 +157,7 @@ const VideoContent = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           src="/time.png"
           alt="time"
-          className={`absolute  ${locale === 'en' ? 'left-4' : 'right-2'} w-40 md:w-60 md:top-4`}
+          className={`absolute -top-5 ${locale === 'en' ? 'left-0' : 'right-0'} w-40 md:w-60 md:-top-10`}
         />
       </div>
     </div>

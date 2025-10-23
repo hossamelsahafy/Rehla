@@ -63,7 +63,7 @@ const DnaDes = () => {
             <h3 className="text-2xl md:text-3xl font-semibold text-hover mb-4">
               {locale === 'en' ? item.title : item.titleAr}
             </h3>
-            <p className="text-black/80 text-base md:text-lg leading-relaxed">
+            <p className="text-TextColor/60 text-base md:text-lg leading-relaxed">
               {locale === 'en' ? item.des : item.desAr}
             </p>
           </div>
