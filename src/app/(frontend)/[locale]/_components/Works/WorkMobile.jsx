@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 const WorksMobile = ({ locale, WorkContent }) => {
+  const paginationRef = useRef(null)
   return (
     <>
       <div className="lg:hidden mt-20 relative w-full h-screen">
@@ -48,7 +49,10 @@ const WorksMobile = ({ locale, WorkContent }) => {
           ))}
         </Swiper>
 
-        <div className="custom-pagination absolute bottom-6 inset-x-0 flex justify-center z-1"></div>
+        <div
+          ref={paginationRef}
+          className="custom-pagination absolute bottom-6 inset-x-0 flex justify-center z-1"
+        ></div>
       </div>
     </>
   )
