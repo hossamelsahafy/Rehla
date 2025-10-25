@@ -157,7 +157,7 @@ const WorkMobile = ({ featured, work, locale }) => {
         )}
         <div
           ref={paginationRef}
-          className="custom-pagination flex justify-center items-end z-10 gap-1"
+          className="custom-pagination flex justify-center items-end  gap-1"
         />
       </motion.div>
     </div>

@@ -31,7 +31,14 @@ const LogoSlider = ({ reverse = false, logos }) => {
         ...(locale === 'ar' ? { direction: 'ltr' } : {}),
       }}
     >
-      <Slider width={`${slideWidth}px`} duration={150} hoverPause={true}>
+      <Slider
+        blurBorders={true}
+        blurBorderColor={'#000000'}
+        blurBorderSize={50}
+        width={`${slideWidth}px`}
+        duration={150}
+        pauseOnHover
+      >
         {repeatedLogos.map((src, idx) => (
           <Slider.Slide
             className="px-6"

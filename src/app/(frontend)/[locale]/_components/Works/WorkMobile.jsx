@@ -1,11 +1,14 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 const WorksMobile = ({ locale, WorkContent }) => {
   const paginationRef = useRef(null)
+  const [swiperReady, setSwiperReady] = useState(false)
+  if (!WorkContent) return null
+
   return (
     <>
       <div className="lg:hidden mt-20 relative w-full h-screen">
@@ -13,11 +16,12 @@ const WorksMobile = ({ locale, WorkContent }) => {
           modules={[Pagination]}
           pagination={{
             clickable: true,
-            el: '.custom-pagination',
+            el: paginationRef.current,
           }}
+          onSwiper={() => setSwiperReady(true)}
+          className="h-full relative"
           spaceBetween={16}
           slidesPerView={1}
-          className="h-full relative"
         >
           {WorkContent.map((w, i) => (
             <SwiperSlide
@@ -49,10 +53,7 @@ const WorksMobile = ({ locale, WorkContent }) => {
           ))}
         </Swiper>
 
-        <div
-          ref={paginationRef}
-          className="custom-pagination absolute bottom-6 inset-x-0 flex justify-center z-1"
-        ></div>
+        <div ref={paginationRef} className="custom-pagination mt-4 flex justify-center"></div>
       </div>
     </>
   )

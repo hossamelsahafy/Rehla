@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-
+import Link from 'next/link'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
@@ -373,7 +373,7 @@ const Work = () => {
 
   return (
     <>
-      <div className="hidden lg:flex w-full flex-col items-center p-4 my-20 overflow-hidden">
+      <div className="hidden lg:flex w-full flex-col items-center p-4 mt-10 overflow-hidden">
         <div className="flex flex-row justify-between items-center w-full max-w-7xl mb-12 text-TextColor">
           <motion.p
             initial="hidden"
@@ -384,24 +384,25 @@ const Work = () => {
           >
             {t('Featured')}
           </motion.p>
-
-          <motion.img
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={svgVariant}
-            src="/RightImage.png"
-            alt="LogoImage"
-            className="object-contain w-10 sm:w-16 md:w-20 cursor-pointer"
-            whileHover={{
-              scale: 1.25,
-              rotate: -45,
-              transition: { duration: 0.4, ease: 'easeInOut' },
-            }}
-          />
+          <Link href={`${locale}/works`}>
+            <motion.img
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={svgVariant}
+              src="/RightImage.png"
+              alt="LogoImage"
+              className="object-contain w-[200px] md:w-[300px] cursor-pointer"
+              whileHover={{
+                scale: 1.25,
+                rotate: 45,
+                transition: { duration: 0.4, ease: 'easeInOut' },
+              }}
+            />
+          </Link>
         </div>
 
-        <div className="relative w-full min-h-[800px] h-auto">
+        <div className="relative w-full h-auto">
           <img
             src="/SlidersBg/works-slider-bg.png"
             alt="Work Background"
