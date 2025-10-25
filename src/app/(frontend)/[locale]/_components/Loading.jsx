@@ -45,6 +45,7 @@ export default function Loading() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          loading="eager"
         />
 
         <div className="w-full flex items-center justify-center z-10">

@@ -20,7 +20,7 @@ const Contact = () => {
         alt="background"
       />
 
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-hover via-black/40 to-black/40 backdrop-blur-md"></div>
 
       <div className="relative  flex flex-col max-w-6xl mx-auto text-center items-center justify-center h-full">
         <div className="flex flex-row mt-10 ">

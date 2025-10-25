@@ -71,7 +71,7 @@ const News = () => {
     }
   }
   return (
-    <div className="w-full mx-auto newsBg px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
+    <div className="w-full mx-auto bg-gradient-to-t from-hover via-hover/20 to-transparent px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
       <div className="max-w-6xl mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
         {posts.map((p, i) => (
           <div
