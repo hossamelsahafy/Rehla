@@ -42,7 +42,7 @@ export default function Loading() {
           src="/Logo/Logo.png"
           alt="Logo"
           className="object-contain w-40 mb-10 z-10"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1, scale: 1.2 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           loading="eager"
