@@ -1,11 +1,9 @@
 import React from 'react'
-import ServicesData from '../_components/Services/ServicesData'
-const ServicesComp = () => {
-  return (
-    <div>
-      <ServicesData />
-    </div>
-  )
+import Services from '../_components/Services/Services'
+import GetServices from '@/app/(frontend)/[locale]/_actions/getServices'
+const ServicesComp = async () => {
+  const backendData = await GetServices()
+  return <Services backendData={backendData} />
 }
 
 export default ServicesComp

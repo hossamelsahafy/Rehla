@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import SendEmail from '../../_actions/SendEmail'
+import { CheckLine, ChevronsLeft, ChevronsRight } from 'lucide-react'
 
 const Form = ({ form, buttons, submit, market, s, m, locale }) => {
   const [selectedMarket, setSelectedMarket] = useState(null)
@@ -185,28 +186,7 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
                   selectedMarket === key ? 'text-white font-bold' : 'text-white/70 hover:text-white'
                 }`}
               >
-                {selectedMarket === key && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="19"
-                    viewBox="0 0 18 19"
-                    fill="none"
-                  >
-                    <path
-                      d="M2.63863 11.919L2.05226 12.9506L7.43658 16.9901L8.78274 15.1939L2.63863 11.919Z"
-                      fill="#841624"
-                      stroke="#841624"
-                      strokeWidth="1.67709"
-                    ></path>
-                    <path
-                      d="M10.578 12.9535L8.78314 12.0561L14.0196 1.53954L16.1016 1.42545L10.578 12.9535Z"
-                      fill="#841624"
-                      stroke="#841624"
-                      strokeWidth="1.67709"
-                    ></path>
-                  </svg>
-                )}
+                {selectedMarket === key && <CheckLine />}
                 <p className="text-lg whitespace-nowrap">{label}</p>
               </div>
             ))}
@@ -240,27 +220,11 @@ const Form = ({ form, buttons, submit, market, s, m, locale }) => {
           ) : (
             <>
               {submit}
-              <svg
-                width="14.32"
-                height="15"
-                viewBox="0 0 21 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="lg:w-[21px] lg:h-[22px]"
-              >
-                <path
-                  d="M6.54168 10.023L2.5004 3H6.18786L10.2725 10.023H8.50624L6.18786 18H2.5004L4.77497 10.023H6.54168Z"
-                  fill="#841624"
-                  stroke="white"
-                  strokeWidth="0.5"
-                ></path>
-                <path
-                  d="M14.7692 10.023L10.7279 3H14.4154L18.5 10.023H16.7338L14.4154 18H10.7279L13.0025 10.023H14.7692Z"
-                  fill="#841624"
-                  stroke="white"
-                  strokeWidth="0.5"
-                ></path>
-              </svg>
+              {locale === 'en' ? (
+                <ChevronsRight className="w-6 h-6" />
+              ) : (
+                <ChevronsLeft className="w-6 h-6" />
+              )}
             </>
           )}
         </button>
