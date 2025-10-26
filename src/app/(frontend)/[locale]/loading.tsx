@@ -31,15 +31,12 @@ export default function Loading() {
               src="/Logo/Logo.png"
               alt="Logo"
               className="object-contain w-40 mb-10 z-10"
-              initial={{ opacity: 0, scale: 1.2 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              loading="eager"
-              decoding="sync"
+              initial={{ opacity: 1, scale: 1.2 }}
+              transition={{ duration: 2 }}
             />
 
             <motion.p
-              className="font-playfair italic text-white text-5xl text-center px-4 animate-pulse"
+              className="italic text-white text-5xl text-center px-4 animate-pulse"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{

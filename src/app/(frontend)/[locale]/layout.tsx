@@ -46,7 +46,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
 
-  const siteTitle = locale === 'ar' ? 'رحلة' : 'Rehla'
+  const siteTitle = locale === 'ar' ? 'رحلة للتسويق' : 'Rehla Marketing'
 
   const descriptionByLocale: Record<string, string> = {
     en: 'Rehla Marketing is a full-service digital marketing agency that helps brands grow through creative strategies, data-driven campaigns, and innovative digital solutions. We specialize in marketing, branding, advertising, content, analytics, and custom software development.',
