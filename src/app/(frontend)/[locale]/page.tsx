@@ -8,9 +8,14 @@ import News from './_components/News/News'
 import Contact from './_components/ContactUs/Contact'
 import GetServedPlaces from './_actions/GetServedPlaces'
 import GetServices from './_actions/getServices'
+import GetArticles from './_actions/GetArticles'
 export default async function Home() {
   await new Promise((resolve) => setTimeout(resolve, 4000))
-  const [sliders, backendData] = await Promise.all([GetServedPlaces(), GetServices()])
+  const [sliders, backendData, posts] = await Promise.all([
+    GetServedPlaces(),
+    GetServices(),
+    GetArticles(),
+  ])
   return (
     <main className="relative">
       <PhoneHeader />
@@ -19,7 +24,7 @@ export default async function Home() {
       <ServedPlaces sliders={sliders} />
       <Work />
       <Services backendData={backendData} />
-      <News />
+      <News posts={posts} />
       <Contact />
     </main>
   )
