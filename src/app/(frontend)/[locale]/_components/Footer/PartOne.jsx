@@ -14,7 +14,7 @@ const links = [
   { icon: <FaFacebook />, href: 'https://www.facebook.com/share/16xhjLWB9M/?mibextid=wwXIfr' },
   {
     icon: <FaEnvelope />,
-    href: 'mailto:info@rehlamarketing.com',
+    href: 'mailto:Rehlamarketing@gmail.com',
   },
 ]
 const PartOne = () => {
