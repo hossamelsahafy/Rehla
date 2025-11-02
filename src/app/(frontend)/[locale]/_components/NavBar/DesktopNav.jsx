@@ -10,15 +10,9 @@ const DesktopNav = ({ locale, navLinks, switchPath, otherLocale, t }) => {
       }`}
     >
       <Link href={`/${locale}`}>
-        <div className="flex flex-row gap-2 items-center">
-          <Image
-            src="/Logo/Logo.png"
-            width={118.41}
-            height={33}
-            alt="Logo"
-            className="scale-75 my-1"
-          />
-          <p className="text-2xl italic font-bold">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
+        <div className="flex flex-row gap-0 justify-center items-center">
+          <img src="/Logo/Logo.png" alt="Logo" className="object-contain w-20 my-1" />
+          <p className="text-2xl font-bold">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
         </div>
       </Link>
 

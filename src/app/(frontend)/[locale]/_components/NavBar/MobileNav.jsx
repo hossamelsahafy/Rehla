@@ -39,7 +39,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
         <Link href={`/${locale}`} className="text-2xl font-medium text-gray-900 tracking-[0.02em]">
           <div className="flex flex-row items-center">
             <img src="/Logo/Logo.png" className="object-contain w-10" />
-            <p className="text-white italic font-bold">{locale === 'en' ? 'Rehla' : 'رحلة'}</p>
+            <p className="text-white font-bold">{locale === 'en' ? 'Rehla' : 'رحلة'}</p>
           </div>
         </Link>
         <div className="w-6 h-6"></div>
@@ -74,9 +74,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
             <Link href={`/${locale}`}>
               <div className="flex items-center">
                 <img src="/Logo/Logo.png" alt="Logo" className="h-12 object-contain" />
-                <p className=" italic text-3xl font-extrabold">
-                  {locale === 'en' ? 'REHLA' : 'رحلة'}
-                </p>
+                <p className="text-3xl font-extrabold">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
               </div>
             </Link>
           </div>

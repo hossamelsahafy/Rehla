@@ -3,15 +3,7 @@ import React from 'react'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import {
-  FaFacebook,
-  FaYoutube,
-  FaXTwitter,
-  FaTiktok,
-  FaInstagram,
-  FaLinkedin,
-  FaVimeo,
-} from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa6'
 
 const links = [
   {
@@ -20,6 +12,10 @@ const links = [
   },
   { icon: <FaLinkedin />, href: 'https://www.linkedin.com/company/rehla-marketing-agency/' },
   { icon: <FaFacebook />, href: 'https://www.facebook.com/share/16xhjLWB9M/?mibextid=wwXIfr' },
+  {
+    icon: <FaEnvelope />,
+    href: 'mailto:info@rehlamarketing.com',
+  },
 ]
 const PartOne = () => {
   const t = useTranslations('Footer')
@@ -103,7 +99,7 @@ const PartOne = () => {
 
           <div className="flex items-center">
             <img src="/Logo/Logo.png" alt="Rehla logo" className="object-contain w-20" />
-            <p className="italic text-white text-2xl">Rehla</p>
+            <p className="text-white text-2xl">Rehla</p>
           </div>
         </div>
       </div>

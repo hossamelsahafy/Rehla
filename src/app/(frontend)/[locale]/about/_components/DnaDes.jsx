@@ -8,30 +8,30 @@ const DnaDes = () => {
     {
       title: 'DATA & INSIGHTS DRIVEN',
       titleAr: 'مدفوعة بالبيانات والرؤى',
-      des: 'At Kijamii, data is the backbone of everything we do. We dig into the details, extract insights, and use them to guide strategic decisions that lead to growth. Our approach is data-first, ensuring every move is grounded in insights that allow us to understand audiences on a deeper level and deliver relevance with impact.',
+      des: 'At Rehla, data is the backbone of everything we do. We dig into the details, extract insights, and use them to guide strategic decisions that lead to growth. Our approach is data-first, ensuring every move is grounded in insights that allow us to understand audiences on a deeper level and deliver relevance with impact.',
       desAr:
-        'في كيجامي، تشكّل البيانات العمود الفقري لكل ما نقوم به. نحن نغوص في التفاصيل، ونستخلص الرؤى، ونستخدمها لتوجيه القرارات الاستراتيجية التي تقود إلى النمو. نهجنا قائم على البيانات أولاً، مما يضمن أن كل خطوة نقوم بها تستند إلى رؤى عميقة تُمكّننا من فهم الجمهور بشكل أعمق وتقديم محتوى أكثر تأثيراً وملاءمة.',
+        'في رحلة، تشكّل البيانات العمود الفقري لكل ما نقوم به. نحن نغوص في التفاصيل، ونستخلص الرؤى، ونستخدمها لتوجيه القرارات الاستراتيجية التي تقود إلى النمو. نهجنا قائم على البيانات أولاً، مما يضمن أن كل خطوة نقوم بها تستند إلى رؤى عميقة تُمكّننا من فهم الجمهور بشكل أعمق وتقديم محتوى أكثر تأثيراً وملاءمة.',
     },
     {
       title: 'STRATEGIC AGILITY',
       titleAr: 'المرونة الاستراتيجية',
-      des: "In a fast-paced, ever-evolving digital landscape, agility has been in our DNA since day one, driving our agency's growth year over year. At Kijamii, we lead with strategic agility, moving swiftly and smartly to adjust to new trends, platforms, and audience behaviors, both online and offline. This agility allows us to craft campaigns that are not only timely but also enduring, keeping our brands freshly relevant while consistently delivering impactful results.",
+      des: "In a fast-paced, ever-evolving digital landscape, agility has been in our DNA since day one, driving our agency's growth year over year. At Rehla Marketing, we lead with strategic agility, moving swiftly and smartly to adjust to new trends, platforms, and audience behaviors, both online and offline. This agility allows us to craft campaigns that are not only timely but also enduring, keeping our brands freshly relevant while consistently delivering impactful results.",
       desAr:
-        'في عالم رقمي سريع التغيّر والتطور، كانت المرونة جزءاً من حمضنا النووي منذ اليوم الأول، وهي ما يقود نمو وكالتنا عاماً بعد عام. في كيجامي، نقود بالمرونة الاستراتيجية، فنواكب الاتجاهات الجديدة والمنصات وسلوكيات الجمهور بسرعة وذكاء، سواء على الإنترنت أو خارجه. هذه المرونة تتيح لنا تصميم حملات لا تواكب اللحظة فحسب، بل تظل مؤثرة ودائمة الصدى، مما يحافظ على حيوية العلامات التجارية ويضمن نتائج ملموسة ومستمرة.',
+        'في عالم رقمي سريع التغيّر والتطور، كانت المرونة جزءاً من حمضنا النووي منذ اليوم الأول، وهي ما يقود نمو وكالتنا عاماً بعد عام. في رحلة، نقود بالمرونة الاستراتيجية، فنواكب الاتجاهات الجديدة والمنصات وسلوكيات الجمهور بسرعة وذكاء، سواء على الإنترنت أو خارجه. هذه المرونة تتيح لنا تصميم حملات لا تواكب اللحظة فحسب، بل تظل مؤثرة ودائمة الصدى، مما يحافظ على حيوية العلامات التجارية ويضمن نتائج ملموسة ومستمرة.',
     },
     {
       title: 'CREATIVE ADAPTABILITY',
       titleAr: 'المرونة الإبداعية',
-      des: "Creativity is never static, and neither are we. At Kijamii, our creative mindset thrives on adaptability, evolving continuously to meet the demands of the market. We blend inventive thinking with strategic insight, ensuring every creative solution is fresh, flexible, and perfectly aligned with our clients' goals.",
+      des: "Creativity is never static, and neither are we. At Rehla Marketing, our creative mindset thrives on adaptability, evolving continuously to meet the demands of the market. We blend inventive thinking with strategic insight, ensuring every creative solution is fresh, flexible, and perfectly aligned with our clients' goals.",
       desAr:
-        'الإبداع ليس ثابتاً أبداً، ونحن كذلك. في كيجامي، يقوم تفكيرنا الإبداعي على التكيّف المستمر لتلبية متطلبات السوق المتغيرة. نمزج بين الفكر الابتكاري والرؤية الاستراتيجية، لنضمن أن تكون كل فكرة إبداعية جديدة، مرنة، ومتوافقة تماماً مع أهداف عملائنا.',
+        'الإبداع ليس ثابتاً أبداً، ونحن كذلك. في رحلة، يقوم تفكيرنا الإبداعي على التكيّف المستمر لتلبية متطلبات السوق المتغيرة. نمزج بين الفكر الابتكاري والرؤية الاستراتيجية، لنضمن أن تكون كل فكرة إبداعية جديدة، مرنة، ومتوافقة تماماً مع أهداف عملائنا.',
     },
     {
       title: 'CULTURAL RESONANCE',
       titleAr: 'الانسجام الثقافي',
-      des: "Cultural resonance is at the heart of everything we do. We don't just understand the culture—we are the culture, we live and breathe it. Our team is part of the region's pulse, and we bring this intimate knowledge into every piece of work, ensuring that our clients' brands connect deeply and authentically with local audiences.",
+      des: "Cultural resonance is at the heart of everything we do. We don't just understand the culture we are the culture, we live and breathe it. Our team is part of the region's pulse, and we bring this intimate knowledge into every piece of work, ensuring that our clients' brands connect deeply and authentically with local audiences.",
       desAr:
-        'الانسجام الثقافي هو جوهر كل ما نقوم به. نحن لا نفهم الثقافة فقط — بل نعيشها ونتنفسها. فريقنا جزء من نبض المنطقة، وننقل هذا الفهم العميق إلى كل عمل نقدمه، مما يضمن أن تتواصل العلامات التجارية لعملائنا مع الجماهير المحلية بشكل عميق وأصيل.',
+        'الانسجام الثقافي هو جوهر كل ما نقوم به. نحن لا نفهم الثقافة فقط بل نعيشها ونتنفسها. فريقنا جزء من نبض المنطقة، وننقل هذا الفهم العميق إلى كل عمل نقدمه، مما يضمن أن تتواصل العلامات التجارية لعملائنا مع الجماهير المحلية بشكل عميق وأصيل.',
     },
     {
       title: 'DIGITAL NATIVITY',
@@ -43,11 +43,12 @@ const DnaDes = () => {
     {
       title: 'MEASURABLE GROWTH',
       titleAr: 'نمو قابل للقياس',
-      des: 'We are focused on delivering more than just beautiful work; we deliver results. Our work is tied to measurable growth, ensuring that every strategy, every piece of content, and every campaign contributes to the success of our clients. At Kijamii, we measure success not just by creativity but by the tangible, impactful outcomes we drive, always focused on achieving growth.',
+      des: 'We are focused on delivering more than just beautiful work; we deliver results. Our work is tied to measurable growth, ensuring that every strategy, every piece of content, and every campaign contributes to the success of our clients. At Rehla Marketing, we measure success not just by creativity but by the tangible, impactful outcomes we drive, always focused on achieving growth.',
       desAr:
-        'نحن نركّز على تقديم ما هو أكثر من مجرد عمل جميل؛ نحن نحقق نتائج ملموسة. كل استراتيجية وكل محتوى وكل حملة نقوم بها تهدف إلى تعزيز نجاح عملائنا. في كيجامي، نقيس النجاح ليس بالإبداع فقط، بل بالنتائج الحقيقية والمؤثرة التي نحققها، مع تركيز دائم على تحقيق النمو المستدام.',
+        'نحن نركّز على تقديم ما هو أكثر من مجرد عمل جميل؛ نحن نحقق نتائج ملموسة. كل استراتيجية وكل محتوى وكل حملة نقوم بها تهدف إلى تعزيز نجاح عملائنا. في رحلة، نقيس النجاح ليس بالإبداع فقط، بل بالنتائج الحقيقية والمؤثرة التي نحققها، مع تركيز دائم على تحقيق النمو المستدام.',
     },
   ]
+
   const { locale } = useParams()
 
   return (
