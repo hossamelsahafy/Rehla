@@ -3,7 +3,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import NavBar from './_components/NavBar/NavBar'
-import Footer from './_components/Footer/PartOne'
+import Footer from './_components/Footer/Footer'
 import '../globals.css'
 
 export default async function LocaleLayout({

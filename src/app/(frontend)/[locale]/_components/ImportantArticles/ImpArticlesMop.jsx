@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
-const WorksMobile = ({ locale, WorkContent }) => {
+const ImpArticlesMop = ({ locale, WorkContent }) => {
   const paginationRef = useRef(null)
   const [swiperReady, setSwiperReady] = useState(false)
   if (!WorkContent) return null
@@ -29,7 +29,7 @@ const WorksMobile = ({ locale, WorkContent }) => {
               className="relative flex flex-col rounded-md overflow-hidden cursor-pointer h-full"
             >
               <img
-                src={w.highLight}
+                src={w.HighlightImage?.url}
                 alt={`Highlight ${i}`}
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />
@@ -38,7 +38,7 @@ const WorksMobile = ({ locale, WorkContent }) => {
 
               <div className="relative z-20 flex flex-col items-center gap-4 p-4 h-full justify-center">
                 <img
-                  src={w.Image}
+                  src={w.image.url}
                   alt={`Card image ${i}`}
                   className="imagebg w-full object-contain"
                 />
@@ -59,4 +59,4 @@ const WorksMobile = ({ locale, WorkContent }) => {
   )
 }
 
-export default WorksMobile
+export default ImpArticlesMop

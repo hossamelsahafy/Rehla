@@ -17,7 +17,7 @@ const links = [
     href: 'mailto:Rehlamarketing@gmail.com',
   },
 ]
-const PartOne = () => {
+const Footer = () => {
   const t = useTranslations('Footer')
   const offices = [
     {
@@ -107,4 +107,4 @@ const PartOne = () => {
   )
 }
 
-export default PartOne
+export default Footer

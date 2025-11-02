@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-const WorksDeskTop = ({ locale, WorkContent }) => {
+const ImpArticlesDesktop = ({ locale, WorkContent }) => {
   const [hovered, setHovered] = useState(0)
 
   return (
@@ -9,7 +9,7 @@ const WorksDeskTop = ({ locale, WorkContent }) => {
         {WorkContent.map((w, i) => (
           <img
             key={i}
-            src={w.highLight}
+            src={w.HighlightImage?.url}
             alt="Highlight background"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
               hovered === i ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'
@@ -32,7 +32,7 @@ const WorksDeskTop = ({ locale, WorkContent }) => {
                 {locale === 'ar' ? w.titleAr : w.title}
               </h1>
               <img
-                src={w.Image}
+                src={w.image.url}
                 alt={locale === 'ar' ? w.titleAr : w.title}
                 className="w-full object-contain"
               />
@@ -48,7 +48,7 @@ const WorksDeskTop = ({ locale, WorkContent }) => {
                 hovered === i ? 'opacity-100' : 'opacity-0 z-0'
               }`}
             >
-              <h3 className="text-4xl font-medium uppercase font-inter mt-4 mb-4">
+              <h3 className="text-4xl font-medium uppercase mt-4 mb-4">
                 {locale === 'ar' ? w.titleAr : w.title}
               </h3>
               <p className="text-lg text-[#ffffff50] font-bold uppercase">
@@ -57,7 +57,7 @@ const WorksDeskTop = ({ locale, WorkContent }) => {
 
               <div className="flex-1 flex items-center mt-4">
                 <img
-                  src={w.bg}
+                  src={w.image.url}
                   className="w-full object-cover max-h-full imagebg"
                   alt="Right side content"
                 />
@@ -70,4 +70,4 @@ const WorksDeskTop = ({ locale, WorkContent }) => {
   )
 }
 
-export default WorksDeskTop
+export default ImpArticlesDesktop

@@ -36,12 +36,11 @@ const CustomMediaSelection: React.FC<CustomMediaSelection> = ({
       setSelectedIds([])
       setValue(null)
       console.log('Selection cleared')
-
     } else {
       setSelectedIds([id])
       setValue(id)
-      const selectedItem = mediaItems.find(item => item.id === id)
-    console.log('Selected image:', selectedItem)
+      const selectedItem = mediaItems.find((item) => item.id === id)
+      console.log('Selected image:', selectedItem)
     }
   }
 
@@ -61,7 +60,6 @@ const CustomMediaSelection: React.FC<CustomMediaSelection> = ({
 
         setMediaItems(items)
         console.log('Fetched media items:', items)
-
       } catch (error) {
       } finally {
         setIsLoading(false)
@@ -71,8 +69,8 @@ const CustomMediaSelection: React.FC<CustomMediaSelection> = ({
   }, [relationTo])
 
   useEffect(() => {
-    console.log("External value changed", value);
-    
+    // console.log("External value changed", value);
+
     if (value) {
       if (Array.isArray(value)) {
         setSelectedIds(value.length > 0 ? [value[0]] : [])
@@ -91,15 +89,14 @@ const CustomMediaSelection: React.FC<CustomMediaSelection> = ({
   )
 
   const selectedIdsStr = selectedIds.map((id) => String(id))
-  console.log(selectedIdsStr);
-  
+  console.log(selectedIdsStr)
 
   if (isLoading) {
     return <div>Loading images...</div>
   }
 
   return (
-    <div style={{ width: '100%' }}>
+    <div className="my-10" style={{ width: '100%', marginTop: '10px' }}>
       <label
         htmlFor={`searchInput-${name}`}
         style={{ display: 'block', marginBottom: 6, fontWeight: 'bold', fontSize: 14 }}

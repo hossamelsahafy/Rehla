@@ -1,5 +1,5 @@
 import PhoneHeader from './_components/PhoneHeader/PhoneHeader'
-import Works from './_components/Works/Works'
+import ImpArticles from './_components/ImportantArticles/ImpArticles'
 import VideoClient from './_components/VideoPage/VideoClient'
 import ServedPlaces from './_components/ServedPlaces/ServedPlaces'
 import Work from './_components/Work/Work'
@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <main className="relative">
       <PhoneHeader />
-      <Works />
+      <ImpArticles posts={posts} />
       <VideoClient />
       <ServedPlaces sliders={sliders} />
       <Work />

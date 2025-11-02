@@ -52,11 +52,53 @@ export const Articles: CollectionConfig = {
       required: true,
     },
     {
+      name: 'isImportant',
+      label: 'Is Important',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Mark this post as important (maximum 3 allowed).',
+      },
+      hooks: {
+        beforeChange: [
+          async ({ value, req, originalDoc }) => {
+            if (value === true) {
+              const payload = req.payload
+              const { totalDocs } = await payload.find({
+                collection: 'Articles',
+                where: {
+                  and: [{ isImportant: { equals: true } }, { id: { not_equals: originalDoc?.id } }],
+                },
+                limit: 0,
+              })
+
+              if (totalDocs >= 3) {
+                throw new Error('You can only have up to 3 important articles.')
+              }
+            }
+
+            return value
+          },
+        ],
+      },
+    },
+    {
       name: 'image',
       label: 'Post Image',
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        components: {
+          Field: CustomMediaSelection,
+        },
+      },
+    },
+    {
+      name: 'HighlightImage',
+      label: 'Background Image For Important Articles',
+      type: 'upload',
+      relationTo: 'media',
       admin: {
         components: {
           Field: CustomMediaSelection,
