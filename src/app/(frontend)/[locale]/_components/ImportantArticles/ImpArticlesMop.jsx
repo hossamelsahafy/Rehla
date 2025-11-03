@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
+import Link from 'next/link'
 const ImpArticlesMop = ({ locale, WorkContent }) => {
   const paginationRef = useRef(null)
   const [swiperReady, setSwiperReady] = useState(false)
@@ -36,7 +37,10 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/80 z-10"></div>
 
-              <div className="relative z-20 flex flex-col items-center gap-4 p-4 h-full justify-center">
+              <Link
+                href={`${locale}/article/${w.id}`}
+                className="relative z-20 flex flex-col items-center gap-4 p-4 h-full justify-center"
+              >
                 <img
                   src={w.image.url}
                   alt={`Card image ${i}`}
@@ -48,7 +52,7 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
                 <p className="text-lg text-start text-[#ffffff50] font-medium uppercase">
                   {locale === 'ar' ? w.desAr : w.des}
                 </p>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import React, { useState } from 'react'
 const ImpArticlesDesktop = ({ locale, WorkContent }) => {
   const [hovered, setHovered] = useState(0)
@@ -22,7 +23,8 @@ const ImpArticlesDesktop = ({ locale, WorkContent }) => {
       <div className="relative w-full gap-8 flex max-w-7xl mx-auto">
         <div className="flex flex-col p-2 gap-4 w-auto flex-shrink-0 h-full">
           {WorkContent.map((w, i) => (
-            <div
+            <Link
+              href={`${locale}/article/${w.id}`}
               key={i}
               className={`${locale === 'ar' ? 'images-rtl' : 'images'} relative w-[400px] bg-gray-600 hover:bg-bgHover transition duration-300 cursor-pointer flex flex-col`}
               onMouseEnter={() => setHovered(i)}
@@ -36,7 +38,7 @@ const ImpArticlesDesktop = ({ locale, WorkContent }) => {
                 alt={locale === 'ar' ? w.titleAr : w.title}
                 className="w-full object-contain"
               />
-            </div>
+            </Link>
           ))}
         </div>
 
