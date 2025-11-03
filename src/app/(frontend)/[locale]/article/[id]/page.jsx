@@ -15,11 +15,13 @@ export async function generateMetadata({ params }) {
     },
   }
 }
-const page = async () => {
+const page = async ({ params }) => {
   await new Promise((resolve) => setTimeout(resolve, 4000))
+  const { id } = await params
+
   return (
     <div>
-      <Article />
+      <Article id={id} />
     </div>
   )
 }

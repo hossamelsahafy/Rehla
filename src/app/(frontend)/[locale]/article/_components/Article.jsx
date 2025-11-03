@@ -3,25 +3,14 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
-
-const Article = () => {
-  const [data, setData] = useState(null)
+import { useArticles } from '../../_Context/ArticleContext'
+const Article = ({ id }) => {
   const { locale } = useParams()
-  useEffect(() => {
-    const stored = localStorage.getItem('selectedPost')
-    if (stored) {
-      setData(JSON.parse(stored))
-    }
-  }, [])
-  console.log(data)
-  if (!data) {
-    return (
-      <div className="w-full h-screen flex justify-center items-start text-white">
-        Loading article...
-      </div>
-    )
-  }
+  const { articles, loading } = useArticles()
+  if (loading || !articles) return <div>Loading...</div>
 
+  const data = articles.find((post) => post.id === id)
+  if (!data) return <div>Article not found</div>
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col gap-5 justify-center text-TextColor font-medium">
       <div className="w-full h-[300px] overflow-hidden rounded-2xl shadow-lg">

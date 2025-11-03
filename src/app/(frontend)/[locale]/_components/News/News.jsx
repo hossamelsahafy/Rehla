@@ -14,9 +14,6 @@ const News = ({ posts }) => {
       setVisibleCount(posts.length)
     }
   }
-  const handleSavePost = (post) => {
-    localStorage.setItem('selectedPost', JSON.stringify(post))
-  }
   return (
     <div className="w-full mx-aut font-medium bg-gradient-to-t from-hover via-hover/20 to-transparent px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
       <div className="max-w-6xl mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -24,7 +21,6 @@ const News = ({ posts }) => {
           <Link
             key={p.id}
             href={`/${locale}/article/${p.id}`}
-            onClick={() => handleSavePost(p)}
             className={`group flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-700 ease-in-out
           ${i < visibleCount ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
           >
