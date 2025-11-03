@@ -51,7 +51,7 @@ const ImpArticlesDesktop = ({ locale, WorkContent }) => {
               <h3 className="text-4xl font-medium uppercase mt-4 mb-4">
                 {locale === 'ar' ? w.titleAr : w.title}
               </h3>
-              <p className="text-lg text-[#ffffff50] font-bold uppercase">
+              <p className="text-lg text-[#ffffff50] font-medium uppercase">
                 {locale === 'ar' ? w.desAr : w.des}
               </p>
 

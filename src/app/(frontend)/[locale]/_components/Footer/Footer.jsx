@@ -39,7 +39,7 @@ const Footer = () => {
             <img src="/Logo/Logob.png" alt="Logo" className="object-contain w-20" />
 
             <div>
-              <p className="text-3xl leading-[40px] font-semibold text-[#333] max-md:text-[25px]">
+              <p className="text-3xl leading-[40px] font-medium text-[#333] max-md:text-[25px]">
                 {t('localTalents')}
               </p>
               <p className="text-[22px] max-w-[709px] leading-[30px] text-[#333] max-md:text-[22px]">
@@ -54,7 +54,7 @@ const Footer = () => {
                 key={idx}
                 className="p-6 lg:border-r lg:border-[#7272FD] lg:last:border-r-0 flex flex-col gap-3"
               >
-                <h3 className="text-xl font-semibold text-[#333]">
+                <h3 className="text-xl font-medium text-[#333]">
                   {locale === 'ar' ? o.cityAr : o.city}
                 </h3>
                 <p className="text-sm leading-relaxed text-[#333]">
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full bg-black -mt-4 p-10 flex flex-col justify-center items-start relative z-0">
-        <p className="font-bold text-base md:text-[22px] leading-[20px] text-white uppercase">
+        <p className="font-medium text-base md:text-[22px] leading-[20px] text-white uppercase">
           {t('Follow')}
         </p>
 

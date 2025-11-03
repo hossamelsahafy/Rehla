@@ -24,7 +24,7 @@ const ServedPlaces = ({ sliders }) => {
     <>
       <div className="max-w-6xl mx-auto p-4 mt-20 text-TextColor flex flex-col gap-12 lg:gap-20 justify-center">
         <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-6 lg:gap-10 ">
-          <p className="text-xl lg:text-2xl font-semibold text-center lg:text-left">
+          <p className="text-xl lg:text-2xl font-medium text-center lg:text-left">
             {t('servingEverywhere')}
           </p>
 

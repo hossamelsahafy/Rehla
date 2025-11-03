@@ -1,4 +1,3 @@
-// src/app/(frontend)/[locale]/_components/VideoPage/VideoContentClient.jsx
 'use client'
 
 import { useTranslations } from 'next-intl'

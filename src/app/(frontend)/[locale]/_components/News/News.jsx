@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 
 const News = ({ posts }) => {
   const [visibleCount, setVisibleCount] = useState(4)
@@ -13,12 +14,17 @@ const News = ({ posts }) => {
       setVisibleCount(posts.length)
     }
   }
+  const handleSavePost = (post) => {
+    localStorage.setItem('selectedPost', JSON.stringify(post))
+  }
   return (
-    <div className="w-full mx-auto bg-gradient-to-t from-hover via-hover/20 to-transparent px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
+    <div className="w-full mx-aut font-medium bg-gradient-to-t from-hover via-hover/20 to-transparent px-6 sm:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 relative">
       <div className="max-w-6xl mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
         {posts.map((p, i) => (
-          <div
-            key={i}
+          <Link
+            key={p.id}
+            href={`/${locale}/article/${p.id}`}
+            onClick={() => handleSavePost(p)}
             className={`flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-700 ease-in-out
           ${i < visibleCount ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
           >
@@ -37,14 +43,14 @@ const News = ({ posts }) => {
               </h3>
               <p className="text-sm text-white/80 mt-2">{locale === 'en' ? p.des : p.desAr}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
       <div className="flex justify-center mt-8 lg:mt-12">
         <button
           onClick={handleToggle}
-          className="px-6 py-3 bg-transparent border cursor-pointer text-white hover:text-black font-semibold rounded-lg hover:bg-white transition text-sm sm:text-base"
+          className="px-6 py-3 bg-transparent border cursor-pointer text-white hover:text-black font-medium rounded-lg hover:bg-white transition text-sm sm:text-base"
         >
           {visibleCount === posts.length ? 'Show Less' : 'Show More'}
         </button>

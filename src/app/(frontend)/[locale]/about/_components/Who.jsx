@@ -28,17 +28,17 @@ const Who = () => {
 
   return (
     <div className="max-w-6xl  mx-auto p-4 md:p-16 flex flex-col overflow-hidden gap-6 md:gap-8 lg:gap-10 mt-20 md:mt-30 h-screen">
-      <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center sm:justify-start">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-semibold leading-tight md:leading-[105px] text-TextColor text-center sm:text-left">
+      <div className="flex font-medium flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center sm:justify-start">
+        <p className="font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl italic leading-tight md:leading-[105px] text-TextColor text-center sm:text-left">
           {t('who')}
         </p>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-10 w-full text-TextColor">
         <div className="flex flex-row gap-5 items-center">
-          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed max-w-full lg:max-w-[400px] xl:max-w-[420px] lg:text-left flex items-center text-center justify-center lg:justify-between">
+          <p className="text-lg md:text-xl font-medium lg:text-2xl xl:text-3xl leading-relaxed max-w-full lg:max-w-[400px] xl:max-w-[420px] lg:text-left flex items-center text-center justify-center lg:justify-between">
             <span
-              className={`hidden lg:inline-flex mb-auto ${locale === 'ar' ? 'mr-20' : ''}`}
+              className={`hidden lg:inline-flex font-medium mb-auto ${locale === 'ar' ? 'mr-20' : ''}`}
             ></span>
 
             <span className="inline-block px-1 lg:px-2">{t('para')}</span>

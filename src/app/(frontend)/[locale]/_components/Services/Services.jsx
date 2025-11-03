@@ -62,7 +62,7 @@ const Services = ({ backendData }) => {
                     </p>
 
                     {isActive && (
-                      <p className="text-base sm:text-lg  mt-2 font-semibold text-white transition-opacity duration-300">
+                      <p className="text-base sm:text-lg  mt-2 font-medium text-white transition-opacity duration-300">
                         / {locale === 'ar' ? d.descriptionAr : d.description}
                       </p>
                     )}

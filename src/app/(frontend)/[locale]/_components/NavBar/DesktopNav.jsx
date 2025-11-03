@@ -12,7 +12,7 @@ const DesktopNav = ({ locale, navLinks, switchPath, otherLocale, t }) => {
       <Link href={`/${locale}`}>
         <div className="flex flex-row gap-0 justify-center items-center">
           <img src="/Logo/Logo.png" alt="Logo" className="object-contain w-20 my-1" />
-          <p className="text-2xl font-bold">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
+          <p className="text-2xl font-medium">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
         </div>
       </Link>
 
@@ -22,14 +22,14 @@ const DesktopNav = ({ locale, navLinks, switchPath, otherLocale, t }) => {
             <Link
               key={index}
               href={`/${locale}${link.href}`}
-              className="hover:italic hover:text-hover transition-all duration-150  group font-normal hover:font-bold text-base"
+              className="hover:italic hover:text-hover transition-all duration-150  group font-medium hover:font-bold text-base"
             >
               {link.label}
             </Link>
           ))}
           <button
             onClick={switchPath}
-            className="font-semibold hover:italic cursor-pointer hover:text-hover transition-all duration-300"
+            className="font-medium hover:italic cursor-pointer hover:text-hover transition-all duration-300"
           >
             {otherLocale.toUpperCase()}
           </button>

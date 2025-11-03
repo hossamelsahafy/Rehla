@@ -7,7 +7,7 @@ const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
 
   return (
     <div className="inline-block w-40">
-      <p className="text-TextColor text-base font-thin mb-2">{title}</p>
+      <p className="text-TextColor text-base font-medium mb-2">{title}</p>
 
       <button
         onClick={() => setOpen(!open)}

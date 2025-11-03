@@ -70,6 +70,9 @@ export interface Config {
     users: User;
     media: Media;
     services: Service;
+    ServedPlaces: ServedPlace;
+    Articles: Article;
+    'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,6 +82,9 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
+    ServedPlaces: ServedPlacesSelect<false> | ServedPlacesSelect<true>;
+    Articles: ArticlesSelect<false> | ArticlesSelect<true>;
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -170,7 +176,6 @@ export interface Service {
   descriptionAr?: string | null;
   content?:
     | {
-        image?: (string | null) | Media;
         des?: string | null;
         desAr?: string | null;
         id?: string | null;
@@ -178,6 +183,89 @@ export interface Service {
     | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServedPlaces".
+ */
+export interface ServedPlace {
+  id: string;
+  title: string;
+  /**
+   * If checked, the slider scrolls in the opposite direction
+   */
+  reverse?: boolean | null;
+  logos: {
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Articles".
+ */
+export interface Article {
+  id: string;
+  type: string;
+  typeAr: string;
+  title: string;
+  titleAr: string;
+  des: string;
+  desAr: string;
+  PostDes?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  PostDesAr?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Mark this post as important (maximum 3 allowed).
+   */
+  isImportant?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv".
+ */
+export interface PayloadKv {
+  id: string;
+  key: string;
+  data:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -197,6 +285,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'services';
         value: string | Service;
+      } | null)
+    | ({
+        relationTo: 'ServedPlaces';
+        value: string | ServedPlace;
+      } | null)
+    | ({
+        relationTo: 'Articles';
+        value: string | Article;
+      } | null)
+    | ({
+        relationTo: 'payload-kv';
+        value: string | PayloadKv;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -292,13 +392,52 @@ export interface ServicesSelect<T extends boolean = true> {
   content?:
     | T
     | {
-        image?: T;
         des?: T;
         desAr?: T;
         id?: T;
       };
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServedPlaces_select".
+ */
+export interface ServedPlacesSelect<T extends boolean = true> {
+  title?: T;
+  reverse?: T;
+  logos?:
+    | T
+    | {
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Articles_select".
+ */
+export interface ArticlesSelect<T extends boolean = true> {
+  type?: T;
+  typeAr?: T;
+  title?: T;
+  titleAr?: T;
+  des?: T;
+  desAr?: T;
+  PostDes?: T;
+  PostDesAr?: T;
+  isImportant?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv_select".
+ */
+export interface PayloadKvSelect<T extends boolean = true> {
+  key?: T;
+  data?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

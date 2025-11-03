@@ -45,7 +45,7 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
                 <h3 className="text-2xl md:text-3xl text-start font-medium uppercase mt-4 mb-4 text-white">
                   {locale === 'ar' ? w.titleAr : w.title}
                 </h3>
-                <p className="text-lg text-start text-[#ffffff50] font-bold uppercase">
+                <p className="text-lg text-start text-[#ffffff50] font-medium uppercase">
                   {locale === 'ar' ? w.desAr : w.des}
                 </p>
               </div>

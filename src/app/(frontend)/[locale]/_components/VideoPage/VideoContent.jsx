@@ -144,7 +144,7 @@ const VideoContent = ({ t }) => {
             </button>
 
             <div className="flex flex-col items-start ml-4 text-white">
-              <span className="text-xl lg:text-3xl font-semibold">PLAY</span>
+              <span className="text-xl lg:text-3xl font-medium">PLAY</span>
               <span className="text-xl lg:text-3xl tracking-wide opacity-80">SHOWREEL</span>
             </div>
           </div>

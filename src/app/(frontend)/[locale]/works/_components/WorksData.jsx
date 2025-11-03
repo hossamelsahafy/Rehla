@@ -24,14 +24,14 @@ const WorksData = ({ data, locale }) => {
             <div
               className={`flex flex-col max-w-lg md:max-w-md sm:max-w-full ${locale === 'en' ? 'text-left ' : 'text-right'} gap-2`}
             >
-              <h3 className="text-white text-sm lg:text-lg md:text-lg font-semibold break-words">
+              <h3 className="text-white text-sm lg:text-lg md:text-lg font-medium break-words">
                 {locale === 'ar' ? item.NameAr : item.Name}
               </h3>
               <p className="text-white/70 text-sm md:text-sm sm:text-xs lg:text-lg leading-relaxed whitespace-nowrap">
                 {locale === 'ar' ? item.SubtitleAr : item.Subtitle}
               </p>
 
-              <h3 className="text-white text-sm md:text-lg font-semibold lg:text-lg break-words">
+              <h3 className="text-white text-sm md:text-lg font-medium lg:text-lg break-words">
                 {locale === 'ar' ? item.LocationAr : item.Location}
               </h3>
               <p className="text-white/70 text-sm md:text-sm sm:text-xs lg:text-lg leading-relaxed break-words">

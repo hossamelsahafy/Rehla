@@ -37,7 +37,7 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="text-white text-xl md:text-2xl font-semibold mb-2"
+            className="text-white text-xl md:text-2xl font-medium mb-2"
           >
             {t('FooterHeaderOne')}
           </motion.p>
@@ -47,7 +47,7 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={textVariant}
-            className="text-white text-xl md:text-2xl font-semibold flex flex-wrap justify-center"
+            className="text-white text-xl md:text-2xl font-medium flex flex-wrap justify-center"
           >
             {t('FooterHeaderTwo')}
             <span className={locale === 'ar' ? 'mr-2 text-[#841624]' : 'ml-2 text-[#841624]'}>
@@ -62,7 +62,7 @@ const Footer = () => {
             viewport={{ once: false, amount: 0.3 }}
             variants={svgVariant}
           >
-            <ChevronsRight className="text-white w-12 h-12 font-bold" />
+            <ChevronsRight className="text-white w-12 h-12 font-medium" />
           </motion.div>
         </div>
       </div>

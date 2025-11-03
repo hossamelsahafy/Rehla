@@ -61,10 +61,10 @@ const DnaDes = () => {
             key={index}
             className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all duration-300"
           >
-            <h3 className="text-2xl md:text-3xl font-semibold text-hover mb-4">
+            <h3 className="text-2xl md:text-3xl font-medium text-hover mb-4">
               {locale === 'en' ? item.title : item.titleAr}
             </h3>
-            <p className="text-TextColor/60 text-base md:text-lg leading-relaxed">
+            <p className="text-TextColor/60 text-base md:text-lg font-medium leading-relaxed">
               {locale === 'en' ? item.des : item.desAr}
             </p>
           </div>

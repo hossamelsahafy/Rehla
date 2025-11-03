@@ -39,7 +39,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
         <Link href={`/${locale}`} className="text-2xl font-medium text-gray-900 tracking-[0.02em]">
           <div className="flex flex-row items-center">
             <img src="/Logo/Logo.png" className="object-contain w-10" />
-            <p className="text-white font-bold">{locale === 'en' ? 'Rehla' : 'رحلة'}</p>
+            <p className="text-white font-medium">{locale === 'en' ? 'Rehla' : 'رحلة'}</p>
           </div>
         </Link>
         <div className="w-6 h-6"></div>
@@ -74,7 +74,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
             <Link href={`/${locale}`}>
               <div className="flex items-center">
                 <img src="/Logo/Logo.png" alt="Logo" className="h-12 object-contain" />
-                <p className="text-3xl font-extrabold">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
+                <p className="text-3xl font-medium">{locale === 'en' ? 'REHLA' : 'رحلة'}</p>
               </div>
             </Link>
           </div>
@@ -82,7 +82,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
           <nav className={`w-full flex flex-col gap-6 ${isRTL ? 'items-end' : 'items-start'}`}>
             <Link
               href={`/${locale}`}
-              className={`font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
+              className={`font-medium text-2xl tracking-[0.02em] leading-none py-2 w-full ${
                 activeLink === `/${locale}` ? 'opacity-40' : ''
               } ${isRTL ? 'text-right' : 'text-left'}`}
               onClick={() => handleClick(`/${locale}`)}
@@ -98,7 +98,7 @@ const MobileNav = ({ locale, navLinks, menuOpen, setMenuOpen, switchPath, otherL
               <Link
                 key={index}
                 href={`/${locale}${link.href}`}
-                className={`font-bold text-2xl tracking-[0.02em] leading-none py-2 w-full ${
+                className={`font-medium text-2xl tracking-[0.02em] leading-none py-2 w-full ${
                   activeLink === `/${locale}${link.href}` ? 'opacity-40' : ''
                 } ${isRTL ? 'text-right' : 'text-left'}`}
                 onClick={() => handleClick(`/${locale}${link.href}`)}

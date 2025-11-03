@@ -8,7 +8,7 @@ const ServicesMobile = ({ data, s, locale }) => {
 
   return (
     <div className="text-TextColor lg:hidden max-w-6xl mx-auto p-8">
-      <p className="mt-20 italic font-bold text-left text-2xl">{s}</p>
+      <p className="mt-20 italic font-medium text-left text-2xl">{s}</p>
       {data.map((d, i) => {
         const isActive = i === activeIndex
         return (
