@@ -25,12 +25,12 @@ const News = ({ posts }) => {
             key={p.id}
             href={`/${locale}/article/${p.id}`}
             onClick={() => handleSavePost(p)}
-            className={`flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-700 ease-in-out
+            className={`group flex flex-col lg:flex-row rounded-lg overflow-hidden transition-all duration-700 ease-in-out
           ${i < visibleCount ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
           >
-            <div className="w-full lg:w-1/2 mt-6 lg:mt-0 flex justify-center lg:block">
+            <div className="w-full lg:w-1/2 mt-6 lg:mt-0 flex justify-center transition-all duration-300 ease-in-out group-hover:scale-110 lg:block">
               <div className="w-full max-w-[300px] lg:max-w-none aspect-[4/3] overflow-hidden">
-                <img src={p.image.url} alt={p.title} className="w-full h-full object-cover mask" />
+                <img src={p.image.url} alt={p.title} className="w-full h-full object-cover mask " />
               </div>
             </div>
 
