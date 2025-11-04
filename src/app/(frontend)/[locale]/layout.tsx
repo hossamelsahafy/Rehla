@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import NavBar from './_components/NavBar/NavBar'
 import Footer from './_components/Footer/Footer'
-import { ArticlesProvider } from './_Context/ArticleContext'
 import '../globals.css'
 
 export default async function LocaleLayout({
@@ -31,13 +30,11 @@ export default async function LocaleLayout({
           fontFamily: 'Arial, Helvetica, sans-serif',
         }}
       >
-        <ArticlesProvider>
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            <NavBar />
-            {children}
-            <Footer />
-          </NextIntlClientProvider>
-        </ArticlesProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <NavBar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

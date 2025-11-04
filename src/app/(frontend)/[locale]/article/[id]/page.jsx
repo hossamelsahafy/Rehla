@@ -1,5 +1,6 @@
 import React from 'react'
 import Article from '../_components/Article'
+import GetArticlesById from '../../_actions/GetArticlesById'
 export async function generateMetadata({ params }) {
   const { locale } = await params
 
@@ -18,10 +19,10 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   await new Promise((resolve) => setTimeout(resolve, 4000))
   const { id } = await params
-
+  const data = await GetArticlesById(id)
   return (
     <div>
-      <Article id={id} />
+      <Article data={data} />
     </div>
   )
 }
