@@ -103,5 +103,12 @@
       { "name": "Adds" },
       { "name": "Designs" }
     ]
+  },
+
+  "WorkDetails": {
+    "client": "Client",
+    "title": "Title",
+    "service": "Service",
+    "location": "Location"
   }
 }

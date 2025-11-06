@@ -2,9 +2,13 @@
 import React, { useState } from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
 
-const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
+const DropMenue = ({ data, title, Icon, selected, setSelected, locale }) => {
   const [open, setOpen] = useState(false)
-
+  const getLabel = (item) => {
+    if (!item) return locale === 'ar' ? 'الكل' : 'All'
+    if (item.id === 'all') return locale === 'ar' ? 'الكل' : 'All'
+    return locale === 'ar' ? item.titleAr : item.title
+  }
   return (
     <div className="inline-block w-40">
       <p className="text-TextColor text-base font-medium mb-2">{title}</p>
@@ -14,8 +18,8 @@ const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
         className="flex items-center justify-between w-full gap-2 rounded-lg bg-black/70 px-4 py-2 text-TextColor text-sm hover:bg-black/80 transition"
       >
         <div className="flex items-center text-white gap-2">
-          {(selected?.name === 'ALL' || selected?.name === 'الكل') && <Icon className="text-xl" />}
-          <span>{selected?.name || 'ALL'}</span>
+          {selected?.id === 'all' && <Icon className="text-xl" />}
+          <span>{getLabel(selected)}</span>
         </div>
         <IoMdArrowDropdown
           className={`transition-transform duration-300 ${open ? 'rotate-180' : 'rotate-0'}`}
@@ -35,8 +39,8 @@ const DropMenue = ({ data, title, Icon, selected, setSelected }) => {
               }}
               className="px-4 py-2 text-white text-sm cursor-pointer hover:bg-white/20 transition flex items-center gap-2"
             >
-              {(d.name === 'ALL' || d.name === 'الكل') && <Icon className="text-xl" />}
-              {d.name}
+              {d.id === 'all' && <Icon className="text-xl" />}
+              {getLabel(d)}
             </li>
           ))}
         </ul>

@@ -3,40 +3,50 @@ import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import { IoIosSearch, IoMdGlobe } from 'react-icons/io'
-// import DropMenue from './DropMenue'
+import DropMenue from './DropMenue'
 import WorksData from './WorksData'
 const Works = ({ works }) => {
+  console.log(works)
+
   const { locale } = useParams()
   const t = useTranslations('Works')
   const [clicked, setClicked] = useState(true)
-  // const services = t.raw('services')
-  // const locations = t.raw('locations')
-  // const [selectedLocation, setSelectedLocation] = useState(locations[0])
-  // const [selectedService, setSelectedService] = useState(services[0])
+  const services = Array.from(
+    new Map(
+      works
+        .filter((work) => work.Name && work.NameAr)
+        .map((work) => [work.id, { id: work.id, title: work.Name, titleAr: work.NameAr }]),
+    ).values(),
+  )
+
+  const locations = Array.from(
+    new Map(
+      works.filter((work) => work.locations).map((work) => [work.locations.id, work.locations]),
+    ).values(),
+  )
+
+  const locationsWithAll = [{ id: 'all', title: 'All', titleAr: 'الكل' }, ...locations]
+  const servicesWithAll = [{ id: 'all', title: 'All', titleAr: 'الكل' }, ...services]
+  console.log(servicesWithAll)
+
+  const [selectedLocation, setSelectedLocation] = useState(locationsWithAll[0] || { id: 'all' })
+  const [selectedService, setSelectedService] = useState(servicesWithAll[0] || { id: 'all' })
   const [query, setQuery] = useState('')
 
   const filteredData = works.filter((item) => {
-    const searchFields = ['Name', 'NameAr']
-
+    const searchFields = Object.keys(item)
     const matchesQuery = searchFields.some((field) => {
-      if (!item[field]) return false
-      return item[field].toLowerCase().includes(query.toLowerCase())
+      const value = item[field]
+      if (typeof value !== 'string') return false
+      return value.toLowerCase().includes(query.toLowerCase())
     })
 
-    // const matchesLocation =
-    //   selectedLocation.name === 'ALL' ||
-    //   selectedLocation.name === 'الكل' ||
-    //   item.Location === selectedLocation.name ||
-    //   item.LocationAr === selectedLocation.name
+    const matchesLocation =
+      selectedLocation.id === 'all' || item.locations?.id === selectedLocation.id
 
-    // const matchesService =
-    //   selectedService.name === 'ALL' ||
-    //   selectedService.name === 'الكل' ||
-    //   item.Name === selectedService.name ||
-    //   item.NameAr === selectedService.name
+    const matchesService = selectedService.id === 'all' || item.id === selectedService.id
 
-    return matchesQuery
-    // return matchesQuery && matchesLocation && matchesService
+    return matchesQuery && matchesLocation && matchesService
   })
 
   return (
@@ -61,20 +71,22 @@ const Works = ({ works }) => {
             </div>
           </div>
 
-          {/* <DropMenue
+          <DropMenue
             title={t('Locations')}
             selected={selectedLocation}
             setSelected={setSelectedLocation}
-            data={locations}
+            data={locationsWithAll}
             Icon={IoMdGlobe}
-          /> */}
-          {/* <DropMenue
+            locale={locale}
+          />
+          <DropMenue
             title={t('Services')}
             selected={selectedService}
             setSelected={setSelectedService}
-            data={services}
+            data={servicesWithAll}
             Icon={IoMdGlobe}
-          /> */}
+            locale={locale}
+          />
         </div>
 
         <WorksData data={filteredData} locale={locale} />

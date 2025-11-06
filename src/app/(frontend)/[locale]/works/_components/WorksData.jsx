@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import { MapPin } from 'lucide-react'
+
 const WorksData = ({ data, locale }) => {
   return (
     <div className="relative w-full">
@@ -31,6 +33,15 @@ const WorksData = ({ data, locale }) => {
               <p className="text-white/70 text-sm md:text-sm sm:text-xs lg:text-lg leading-relaxed">
                 {locale === 'ar' ? item.SubtitleAr : item.Subtitle}
               </p>
+              <h3 className="text-white text-sm lg:text-lg md:text-lg font-medium">
+                {locale === 'en' ? item.ClientName : item.ClientNameAr}
+              </h3>
+              <div className="flex items-center gap-2">
+                <MapPin className="text-white/70 w-4 h-4 lg:w-5 lg:h-5" />
+                <p className="text-white/70 text-sm sm:text-xs md:text-sm lg:text-lg leading-relaxed">
+                  {locale === 'en' ? item.locations.title : item.locations.titleAr}
+                </p>
+              </div>
             </div>
           </Link>
         ))}
