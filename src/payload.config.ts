@@ -11,6 +11,8 @@ import { Media } from './collections/Media'
 import { Services } from './collections/Services'
 import { ServedPlaces } from './collections/ServedPlaces'
 import { Articles } from './collections/Articles'
+import { Works } from './collections/Works'
+// import { Locations } from './collections/Location'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -35,7 +37,7 @@ export default buildConfig({
     },
   },
   editor: lexicalEditor(),
-  collections: [Users, Media, Services, ServedPlaces, Articles],
+  collections: [Users, Media, Services, ServedPlaces, Articles, Works],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

@@ -3,366 +3,40 @@ import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import { IoIosSearch, IoMdGlobe } from 'react-icons/io'
-import DropMenue from './DropMenue'
+// import DropMenue from './DropMenue'
 import WorksData from './WorksData'
-const Works = () => {
+const Works = ({ works }) => {
   const { locale } = useParams()
   const t = useTranslations('Works')
   const [clicked, setClicked] = useState(true)
-  const locations = t.raw('locations')
-  const services = t.raw('services')
-  const [selectedLocation, setSelectedLocation] = useState(locations[0]) // default ALL
-  const [selectedService, setSelectedService] = useState(services[0]) // default ALL
+  // const services = t.raw('services')
+  // const locations = t.raw('locations')
+  // const [selectedLocation, setSelectedLocation] = useState(locations[0])
+  // const [selectedService, setSelectedService] = useState(services[0])
   const [query, setQuery] = useState('')
 
-  const works = [
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'KSA',
-      Services: 'Programming',
-      LocationAr: 'السعودية',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      Services: 'Case Studyies',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Adds',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'Egypt',
-      LocationAr: 'مصر',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Designs',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      Services: 'Case Studyies',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Adds',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Designs',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      Services: 'Case Studyies',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Adds',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Designs',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      Services: 'Case Studyies',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Adds',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Designs',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      Services: 'Case Studyies',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Adds',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-    {
-      Name: 'Programming Mastery',
-      NameAr: 'إتقان البرمجة',
-      Subtitle: 'Learn to Code Efficiently',
-      SubtitleAr: 'تعلم البرمجة بكفاءة',
-      Image: '/WorkBg/Pro.jpg',
-      Location: 'Egypt',
-      Services: 'Programming',
-      LocationAr: 'مصر',
-      ServicesAr: 'برمجة',
-    },
-    {
-      Name: 'Case Studies Deep Dive',
-      NameAr: 'تحليل دراسات الحالة',
-      Subtitle: 'Analyze Real Projects',
-      SubtitleAr: 'تحليل مشاريع حقيقية',
-      Image: '/WorkBg/Case.jpg',
-      Location: 'KSA',
-      LocationAr: 'السعودية',
-      ServicesAr: 'دراسات حالة',
-    },
-    {
-      Name: 'Creative Designs Hub',
-      NameAr: 'مركز التصميم الإبداعي',
-      Subtitle: 'Innovate Your Ideas',
-      SubtitleAr: 'ابتكر أفكارك',
-      Image: '/WorkBg/Designs.jpg',
-      Location: 'Regional',
-      Services: 'Designs',
-      LocationAr: 'الإقليمية',
-      ServicesAr: 'تصميمات',
-    },
-  ]
   const filteredData = works.filter((item) => {
-    const searchFields = ['Name', 'NameAr', 'Location', 'LocationAr', 'Services', 'ServicesAr']
+    const searchFields = ['Name', 'NameAr']
 
     const matchesQuery = searchFields.some((field) => {
       if (!item[field]) return false
       return item[field].toLowerCase().includes(query.toLowerCase())
     })
 
-    const matchesLocation =
-      selectedLocation.name === 'ALL' ||
-      selectedLocation.name === 'الكل' ||
-      item.Location === selectedLocation.name ||
-      item.LocationAr === selectedLocation.name
+    // const matchesLocation =
+    //   selectedLocation.name === 'ALL' ||
+    //   selectedLocation.name === 'الكل' ||
+    //   item.Location === selectedLocation.name ||
+    //   item.LocationAr === selectedLocation.name
 
-    const matchesService =
-      selectedService.name === 'ALL' ||
-      selectedService.name === 'الكل' ||
-      item.Services === selectedService.name ||
-      item.ServicesAr === selectedService.name
+    // const matchesService =
+    //   selectedService.name === 'ALL' ||
+    //   selectedService.name === 'الكل' ||
+    //   item.Name === selectedService.name ||
+    //   item.NameAr === selectedService.name
 
-    return matchesQuery && matchesLocation && matchesService
+    return matchesQuery
+    // return matchesQuery && matchesLocation && matchesService
   })
 
   return (
@@ -387,20 +61,20 @@ const Works = () => {
             </div>
           </div>
 
-          <DropMenue
+          {/* <DropMenue
             title={t('Locations')}
             selected={selectedLocation}
             setSelected={setSelectedLocation}
             data={locations}
             Icon={IoMdGlobe}
-          />
-          <DropMenue
+          /> */}
+          {/* <DropMenue
             title={t('Services')}
             selected={selectedService}
             setSelected={setSelectedService}
             data={services}
             Icon={IoMdGlobe}
-          />
+          /> */}
         </div>
 
         <WorksData data={filteredData} locale={locale} />

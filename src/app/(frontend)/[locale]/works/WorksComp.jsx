@@ -1,9 +1,12 @@
 import React from 'react'
 import Works from './_components/Works'
-const WorksComp = () => {
+import getWorks from '../_actions/GetWorks'
+
+const WorksComp = async () => {
+  const works = await getWorks()
   return (
     <div>
-      <Works />
+      <Works works={works} />
     </div>
   )
 }

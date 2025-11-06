@@ -6,6 +6,7 @@ import { Grid, Pagination } from 'swiper/modules'
 import 'swiper/css/grid'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import Link from 'next/link'
 
 const containerVariant = {
   hidden: { opacity: 0 },
@@ -133,24 +134,26 @@ const WorkMobile = ({ featured, work, locale }) => {
           >
             {work.map((w, i) => (
               <SwiperSlide key={i}>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={cardVariant}
-                  className="flex flex-col justify-center items-center gap-3"
-                  viewport={{ once: false }}
-                >
-                  <div className="relative w-32 sm:w-36 h-32 sm:h-36 rounded-md overflow-hidden shadow-md">
-                    <img
-                      alt={w.Name}
-                      src={w.Image}
-                      className={`w-full h-full ${locale === 'en' ? 'clibPath' : 'clipPathAr'} object-cover`}
-                    />
-                  </div>
-                  <p className="text-center mb-4 text-white text-xs sm:text-sm leading-snug font-medium  uppercase line-clamp-2 w-32 sm:w-36">
-                    {locale === 'ar' ? w.NameAr : w.Name}
-                  </p>
-                </motion.div>
+                <Link href={`/${locale}/works/${w.id}`} className="block w-full">
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={cardVariant}
+                    className="flex flex-col justify-center items-center gap-3"
+                    viewport={{ once: false }}
+                  >
+                    <div className="relative w-32 sm:w-36 h-32 sm:h-36 rounded-md overflow-hidden shadow-md">
+                      <img
+                        alt={w.Name}
+                        src={w.image?.url}
+                        className={`w-full h-full ${locale === 'en' ? 'clibPath' : 'clipPathAr'} object-cover`}
+                      />
+                    </div>
+                    <p className="text-center mb-4 text-white text-xs sm:text-sm leading-snug font-medium  uppercase line-clamp-2 w-32 sm:w-36">
+                      {locale === 'ar' ? w.NameAr : w.Name}
+                    </p>
+                  </motion.div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
