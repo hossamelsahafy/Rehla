@@ -15,6 +15,7 @@ const Services = ({ backendData }) => {
       const reversed = backendData.slice().reverse()
 
       setData(reversed)
+      setHoveredIndex(0)
     } catch (error) {
       console.error('Error fetching services:', error)
     }
@@ -73,7 +74,7 @@ const Services = ({ backendData }) => {
 
             <div
               className="flex flex-1 lg:w-1/2 h-full group"
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseLeave={() => setHoveredIndex(0)}
             >
               {hoveredIndex !== null && (
                 <div className="flex gap-8 w-full h-full">

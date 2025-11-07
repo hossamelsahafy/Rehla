@@ -9,14 +9,15 @@ import Contact from './_components/ContactUs/Contact'
 import GetServedPlaces from './_actions/GetServedPlaces'
 import GetServices from './_actions/getServices'
 import GetArticles from './_actions/GetArticles'
-import GetWorks from './_actions/GetWorks'
+// import GetWorks from './_actions/GetWorks'
 export default async function Home() {
   await new Promise((resolve) => setTimeout(resolve, 4000))
-  const [sliders, backendData, posts, works] = await Promise.all([
+  // Add [works] as needed...
+  const [sliders, backendData, posts] = await Promise.all([
     GetServedPlaces(),
     GetServices(),
     GetArticles(),
-    GetWorks(),
+    // GetWorks(),
   ])
 
   return (
@@ -25,7 +26,7 @@ export default async function Home() {
       <ImpArticles posts={posts} />
       <VideoClient />
       <ServedPlaces sliders={sliders} />
-      <Work works={works} />
+      {/* <Work works={works} /> */}
       <Services backendData={backendData} />
       <News posts={posts} />
       <Contact />

@@ -13,9 +13,9 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = [
-    { id: 5, href: '/about', label: t('about') },
     { id: 4, href: '/services', label: t('services') },
-    { id: 3, href: '/works', label: t('works') },
+    { id: 5, href: '/about', label: t('about') },
+    // { id: 3, href: '/works', label: t('works') },
   ]
 
   const switchPath = () => {
