@@ -72,10 +72,7 @@ const Services = ({ backendData }) => {
               })}
             </div>
 
-            <div
-              className="flex flex-1 lg:w-1/2 h-full group"
-              onMouseLeave={() => setHoveredIndex(0)}
-            >
+            <div className="flex flex-1 lg:w-1/2 h-full group">
               {hoveredIndex !== null && (
                 <div className="flex gap-8 w-full h-full">
                   <div className="flex-1 h-full">
