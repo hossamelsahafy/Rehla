@@ -14,7 +14,7 @@ const links = [
   { icon: <FaFacebook />, href: 'https://www.facebook.com/share/16xhjLWB9M/?mibextid=wwXIfr' },
   {
     icon: <FaEnvelope />,
-    href: 'mailto:Rehlamarketing@gmail.com',
+    href: 'mailto:info@rehlamarketing.com',
   },
 ]
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
       cityAr: 'مكتب الرياض',
       address: 'Office 86, 25 Square Building, Anas Ibn Malek, Al Yasmeen Dist., Riyadh',
       addressAr: 'المكتب 86، مبنى 25 سكوير، أنس بن مالك، حي الياسمين، الرياض',
-      email: 'Rehlamarketing@gmail.com',
+      email: 'info@rehlamarketing.com',
       phone: '+966564107629',
     },
   ]
