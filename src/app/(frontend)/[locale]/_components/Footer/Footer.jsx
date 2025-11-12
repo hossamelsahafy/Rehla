@@ -21,10 +21,10 @@ const Footer = () => {
   const t = useTranslations('Footer')
   const offices = [
     {
-      city: 'Riyadh Office',
-      cityAr: 'مكتب الرياض',
-      address: 'Office 86, 25 Square Building, Anas Ibn Malek, Al Yasmeen Dist., Riyadh',
-      addressAr: 'المكتب 86، مبنى 25 سكوير، أنس بن مالك، حي الياسمين، الرياض',
+      city: 'Zagazig Office',
+      cityAr: 'مكتب الزقازيق',
+      address: 'Egypt, Zagazig, Tolba Owida St, Beside CIB bank',
+      addressAr: 'مصر, الزقازيق, شارع طلبة عويضة, بجوار بنك CIB',
       email: 'info@rehlamarketing.com',
       phone: '+966564107629',
     },
