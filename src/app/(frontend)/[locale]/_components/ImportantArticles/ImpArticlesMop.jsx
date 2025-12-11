@@ -12,7 +12,12 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
 
   return (
     <>
-      <div className="lg:hidden mt-20 relative w-full h-screen">
+      <div
+        className="lg:hidden mt-20 relative w-full h-screen"
+        style={{ backgroundImage: 'url(/HighLight/HighLightOne.png)' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/80"></div>
+
         <Swiper
           modules={[Pagination]}
           pagination={{
@@ -20,7 +25,7 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
             el: paginationRef.current,
           }}
           onSwiper={() => setSwiperReady(true)}
-          className="h-full relative"
+          className="h-full"
           spaceBetween={16}
           slidesPerView={1}
         >
@@ -29,14 +34,6 @@ const ImpArticlesMop = ({ locale, WorkContent }) => {
               key={i}
               className="relative flex flex-col rounded-md overflow-hidden cursor-pointer h-full"
             >
-              <img
-                src={w.HighlightImage?.url}
-                alt={`Highlight ${i}`}
-                className="absolute inset-0 w-full h-full object-cover z-0"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/80 z-10"></div>
-
               <Link
                 href={`${locale}/article/${w.id}`}
                 className="relative z-20 flex flex-col items-center gap-4 p-4 h-full justify-center"

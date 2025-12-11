@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     `
 
     await payload.sendEmail({
-      to: 'hossamelsahafy78@gmail.com',
+      to: 'info@rehlamarketing.com',
       from: process.env.SMTP_USER,
       subject: '📩 New Message from Rehla Client',
       html: htmlContent,

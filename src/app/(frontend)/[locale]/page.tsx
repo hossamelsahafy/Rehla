@@ -1,8 +1,8 @@
 import PhoneHeader from './_components/PhoneHeader/PhoneHeader'
 import ImpArticles from './_components/ImportantArticles/ImpArticles'
-import VideoClient from './_components/VideoPage/VideoClient'
+// import VideoClient from './_components/VideoPage/VideoClient'
 import ServedPlaces from './_components/ServedPlaces/ServedPlaces'
-import Work from './_components/Work/Work'
+// import Work from './_components/Work/Work'
 import Services from './_components/Services/Services'
 import News from './_components/News/News'
 import Contact from './_components/ContactUs/Contact'
@@ -24,7 +24,7 @@ export default async function Home() {
     <main className="relative">
       <PhoneHeader />
       <ImpArticles posts={posts} />
-      <VideoClient />
+      {/* <VideoClient /> */}
       <ServedPlaces sliders={sliders} />
       <Work works={works} />
       <Services backendData={backendData} />

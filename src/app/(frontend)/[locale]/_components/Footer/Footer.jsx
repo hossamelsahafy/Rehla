@@ -14,18 +14,18 @@ const links = [
   { icon: <FaFacebook />, href: 'https://www.facebook.com/share/16xhjLWB9M/?mibextid=wwXIfr' },
   {
     icon: <FaEnvelope />,
-    href: 'mailto:Rehlamarketing@gmail.com',
+    href: 'mailto:info@rehlamarketing.com',
   },
 ]
 const Footer = () => {
   const t = useTranslations('Footer')
   const offices = [
     {
-      city: 'Riyadh Office',
-      cityAr: 'مكتب الرياض',
-      address: 'Office 86, 25 Square Building, Anas Ibn Malek, Al Yasmeen Dist., Riyadh',
-      addressAr: 'المكتب 86، مبنى 25 سكوير، أنس بن مالك، حي الياسمين، الرياض',
-      email: 'Rehlamarketing@gmail.com',
+      city: 'Zagazig Office',
+      cityAr: 'مكتب الزقازيق',
+      address: 'Egypt, Zagazig, Tolba Owida St, Beside CIB bank',
+      addressAr: 'مصر, الزقازيق, شارع طلبة عويضة, بجوار بنك CIB',
+      email: 'info@rehlamarketing.com',
       phone: '+966564107629',
     },
   ]
@@ -33,16 +33,16 @@ const Footer = () => {
   return (
     <>
       <div className="relative w-full">
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div>
-        <div className="w-full bg-white mx-auto flex flex-col justify-center gap-10 overflow-hidden p-4 relative z-0">
-          <div className="flex mt-4 flex-col lg:flex-row justify-center gap-5 items-start lg:items-center">
-            <img src="/Logo/Logob.png" alt="Logo" className="object-contain w-20" />
+        {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div> */}
+        <div className="w-full mx-auto flex flex-col justify-center gap-10 overflow-hidden p-4 relative z-0 text-white">
+          <div className="flex mt-4 flex-col text lg:flex-row justify-center gap-5 items-start lg:items-center">
+            <img src="/Logo/Logo.png" alt="Logo" className="object-contain w-20" />
 
             <div>
-              <p className="text-3xl leading-[40px] font-medium text-[#333] max-md:text-[25px]">
+              <p className="text-3xl leading-[40px] font-medium max-md:text-[25px]">
                 {t('localTalents')}
               </p>
-              <p className="text-[22px] max-w-[709px] leading-[30px] text-[#333] max-md:text-[22px]">
+              <p className="text-[22px] max-w-[709px] leading-[30px] max-md:text-[22px]">
                 {t('teamsMena')}
               </p>
             </div>
@@ -54,20 +54,16 @@ const Footer = () => {
                 key={idx}
                 className="p-6 lg:border-r lg:border-[#7272FD] lg:last:border-r-0 flex flex-col gap-3"
               >
-                <h3 className="text-xl font-medium text-[#333]">
-                  {locale === 'ar' ? o.cityAr : o.city}
-                </h3>
-                <p className="text-sm leading-relaxed text-[#333]">
-                  {locale === 'ar' ? o.addressAr : o.address}
-                </p>
-                <a href={`mailto:${o.email}`} className="text-blue-600 hover:underline mt-auto">
+                <h3 className="text-xl font-medium ">{locale === 'ar' ? o.cityAr : o.city}</h3>
+                <p className="leading-relaxed ">{locale === 'ar' ? o.addressAr : o.address}</p>
+                <a href={`mailto:${o.email}`} className="text-red-200 hover:underline mt-auto">
                   {o.email}
                 </a>
                 <a
                   href={`https://wa.me/${o.phone.replace(/\D/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#841624] hover:underline mt-1"
+                  className="text-red-200 hover:underline mt-1"
                 >
                   {o.phone}
                 </a>
