@@ -32,7 +32,7 @@ const Footer = () => {
   const { locale } = useParams()
   return (
     <>
-      <div className="relative w-full">
+      <div className="relative w-full bg-black">
         {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div> */}
         <div className="w-full mx-auto flex flex-col justify-center gap-10 overflow-hidden p-4 relative z-0 text-white">
           <div className="flex mt-4 flex-col text lg:flex-row justify-center gap-5 items-start lg:items-center">
