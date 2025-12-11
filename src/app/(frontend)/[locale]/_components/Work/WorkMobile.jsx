@@ -150,7 +150,7 @@ const WorkMobile = ({ featured, work, locale }) => {
                       />
                     </div>
                     <p className="text-center mb-4 text-white text-xs sm:text-sm leading-snug font-medium  uppercase line-clamp-2 w-32 sm:w-36">
-                      {locale === 'ar' ? w.NameAr : w.Name}
+                      {locale === 'ar' ? w.ClientNameAr : w.ClientName}
                     </p>
                   </motion.div>
                 </Link>

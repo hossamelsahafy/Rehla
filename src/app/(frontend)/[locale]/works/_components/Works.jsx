@@ -6,8 +6,6 @@ import { IoIosSearch, IoMdGlobe } from 'react-icons/io'
 import DropMenue from './DropMenue'
 import WorksData from './WorksData'
 const Works = ({ works }) => {
-  console.log(works)
-
   const { locale } = useParams()
   const t = useTranslations('Works')
   const [clicked, setClicked] = useState(true)
@@ -15,7 +13,7 @@ const Works = ({ works }) => {
     new Map(
       works
         .filter((work) => work.Name && work.NameAr)
-        .map((work) => [work.id, { id: work.id, title: work.Name, titleAr: work.NameAr }]),
+        .map((work) => [work.Name, { title: work.Name, titleAr: work.NameAr }]),
     ).values(),
   )
 
@@ -27,7 +25,6 @@ const Works = ({ works }) => {
 
   const locationsWithAll = [{ id: 'all', title: 'All', titleAr: 'الكل' }, ...locations]
   const servicesWithAll = [{ id: 'all', title: 'All', titleAr: 'الكل' }, ...services]
-  console.log(servicesWithAll)
 
   const [selectedLocation, setSelectedLocation] = useState(locationsWithAll[0] || { id: 'all' })
   const [selectedService, setSelectedService] = useState(servicesWithAll[0] || { id: 'all' })
@@ -44,7 +41,7 @@ const Works = ({ works }) => {
     const matchesLocation =
       selectedLocation.id === 'all' || item.locations?.id === selectedLocation.id
 
-    const matchesService = selectedService.id === 'all' || item.id === selectedService.id
+    const matchesService = selectedService.id === 'all' || item.Name === selectedService.title
 
     return matchesQuery && matchesLocation && matchesService
   })

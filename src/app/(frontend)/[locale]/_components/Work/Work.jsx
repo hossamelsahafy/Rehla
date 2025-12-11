@@ -120,7 +120,7 @@ const Work = ({ works }) => {
                           />
                         </div>
                         <p className="mt-4 text-TextColor text-lg md:text-xl lg:text-2xl leading-[1.3] font-medium  uppercase">
-                          {locale === 'ar' ? w.NameAr : w.Name}
+                          {locale === 'ar' ? w.ClientNameAr : w.ClientName}
                         </p>
                       </motion.div>
                     </Link>

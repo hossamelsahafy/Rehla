@@ -15,7 +15,7 @@ const NavBar = () => {
   const navLinks = [
     { id: 4, href: '/services', label: t('services') },
     { id: 5, href: '/about', label: t('about') },
-    // { id: 3, href: '/works', label: t('works') },
+    { id: 3, href: '/works', label: t('works') },
   ]
 
   const switchPath = () => {
