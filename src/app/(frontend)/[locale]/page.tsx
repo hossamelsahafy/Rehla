@@ -23,7 +23,7 @@ export default async function Home() {
     <main className="relative">
       <PhoneHeader />
       <ImpArticles posts={posts} />
-      {/* <VideoClient /> */}
+
       <ServedPlaces sliders={sliders} />
       <Work works={works} />
       <Services backendData={backendData} />
